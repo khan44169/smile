@@ -110,10 +110,6 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-  #user {
-    /* height: 1vh; */
-    /* flex-direction: column; */
-  }
   #signup-div {
     width: 75%;
   }
