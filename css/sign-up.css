@@ -1,8 +1,8 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 html {
     height: 100%;
@@ -43,7 +43,8 @@ body {
 .login-box .user-box input {
     width: 100%;
     padding: 10px 0;
-    /* font-size: 16px; */
+    margin-bottom: 1.2em;
+    font-size: 16px;
     color: #fff;
     border: none;
     border-bottom: 1px solid #fff;
@@ -111,8 +112,8 @@ body {
 
 @media only screen and (max-width: 600px) {
     #user {
-        width: 100%;
-        flex-direction: column;
+        /* height: 1vh; */
+        /* flex-direction: column; */
     }
     #signup-div {
         width: 75%;

@@ -76,3 +76,9 @@ body {
     /* margin: auto; */
     background: #76919c;
 }
+
+@media only screen and(min-height) {
+    #food-section {
+        height: 85%;
+    }
+}
