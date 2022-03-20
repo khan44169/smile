@@ -14,14 +14,14 @@
     <div class="login-box" id="signup-div">
         <h2>Register yourself...</h2>
         <form>
-            <div class="user" id="user">
-                <!-- <label>You Are!!!</label></br> -->
-                  <input type="radio" id="NGO" name="user" value="NGO" onclick="show_NGO();"required>
+            <div class="user">
+                <label>You Are!!!</label></br>
+                  <input type="radio" id="NGO" name="user" value="NGO" onclick="show1();"required>
   <label for="NGO">NGO</label><br>
-  <input type="radio" id="HOTEL" name="user" value="HOTEL" onclick="show_hotel();">
-  <label for="HOTEL">Hotel</label><br>
-  <input type="radio" id="SINGLE" name="user" value="SINGLE" onclick="show();">
-  <label for="SINGLE">Single Owner</label>
+  <input type="radio" id="HOTEL" name="user" value="HOTEL" onclick="show2();">
+  <label for="HOTEL">HOTEL</label><br>
+  <input type="radio" id="SINGLE" name="user" value="SINGLE" onclick="show3();">
+  <label for="SINGLE">SINGLE OWNER</label>
             </div>
             <div id="NGO-signup" class="hide">
                 <div class="user-box">
@@ -69,15 +69,15 @@
 </body>
 
 <script>
-    function show_NGO(){
+    function show1(){
   document.getElementById('NGO-signup').style.display ='block';
   document.getElementById('HOTEL-signup').style.display ='none';
 }
-function show_hotel(){
+function show2(){
   document.getElementById('NGO-signup').style.display = 'none';
   document.getElementById('HOTEL-signup').style.display = 'block';
 }
-function show(){
+function show3(){
   document.getElementById('NGO-signup').style.display = 'none';
   document.getElementById('HOTEL-signup').style.display = 'none';
 }
