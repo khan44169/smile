@@ -1,77 +1,75 @@
-* {
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
-}
-
-#triangle {
-    position: absolute;
-    top: 0;
-    background-color: black;
-    width: 100%;
-    height: 70vh;
-    clip-path: polygon(100% 0%, 100% 87%, -45% 0%);
+html {
+    height: 100%;
 }
 
 body {
-    position: absolute;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #d9dcdc;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: rgba(16, 126, 89, 0.884);
 }
 
-#food-section {
-    height: 75%;
-    background-color: white;
-    position: relative;
-    display: flex;
-    /* text-align: center; */
-    justify-content: center;
-    width: 75%;
-    border: 2px solid #d9dcdc;
+.food {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40em;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgb(0, 0, 0.6);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
     border-radius: 10px;
 }
 
-#form-section {
-    margin-top: 3rem;
-    /* border: 2px solid red; testing purpose */
-}
-
-.form>div {
-    margin: 15px;
-}
-
-#food-type,
-#btn-section {
-    margin: 0;
-    padding: 15px;
-    /* border: 2px solid blue; /*testing purpose*/
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-#food-type label {
-    margin: 5px;
-}
-
-#note {
-    color: rgb(95, 84, 84);
-    font-size: 0.8em;
-}
-
-#btn-section {}
-
-.btn {
+.food h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
     text-align: center;
-    border: 2px solid #799aa8;
-    border-radius: 5px;
-    padding: 10px 28px;
+}
+
+.food .user-box {
+    position: relative;
+}
+
+.food .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.food .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.food .user-box input:focus~label,
+.food .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+.food form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
     color: white;
+<<<<<<< HEAD
     /* display: block; */
     /* margin: auto; */
     background: #76919c;
@@ -80,5 +78,55 @@ body {
 @media only screen and(min-height) {
     #food-section {
         height: 85%;
+=======
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+}
+
+.food a:hover {
+    background: black;
+    color: #fff;
+    border-radius: 5px;
+    /*box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;*/
+}
+
+.food a span {
+    position: absolute;
+    display: block;
+}
+
+.user,
+label {
+    color: white;
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+#food {
+    background-color: black;
+}
+
+@media only screen and (max-width: 600px) {
+    #signup-div {
+        width: 75%;
+    }
+}
+
+
+/* @media only screen and (max-width: 300px) {
+  #signup-div {
+      width: 100%;
+  }
+} */
+
+@media only screen and (max-width:350px) {
+    #signup-div {
+        width: 100%;
+>>>>>>> 1a1e0bfca626f3c417d708876fd6fd8bd0df25fa
     }
 }
