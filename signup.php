@@ -108,70 +108,67 @@
                     echo '<div class="alert alert-danger" role="alert">
                             <strong>Email already registered</strong>
                         </div>';
-                } else
-                {
-                     //for NGO registration
-            if ($_POST['user'] == 'NGO') {
-                echo "NGO";
-                $NGO_reg = "INSERT INTO `ngo` (`ngo_name`, `ngo_registeration`, `ngo_address`, `ngo_email`, `ngo_password`, `ngo_number`) VALUES ( '$NGO_name', '$r_num', '$address', '$email', '$pass', '$phone')";
-                $result = mysqli_query($conn, $NGO_reg);
-             
-
-                if ($result) {
-                    echo " success";
-                    $user=$_POST['user'];
-                    $auth_email="INSERT INTO `auth_email` ( `email`, `org_type`) VALUES ('$email', '$user');";
-                    $auth_result=mysqli_query($conn,$auth_email);
-                    if(!($auth_email)){
-                        "authentication push error NGO";
-                    }
                 } else {
-                    echo "bhai kya kar raha hai tu";
+                    //for NGO registration
+                    if ($_POST['user'] == 'NGO') {
+                        echo "NGO";
+                        $NGO_reg = "INSERT INTO `ngo` (`ngo_name`, `ngo_registeration`, `ngo_address`, `ngo_email`, `ngo_password`, `ngo_number`) VALUES ( '$NGO_name', '$r_num', '$address', '$email', '$pass', '$phone')";
+                        $result = mysqli_query($conn, $NGO_reg);
+
+
+                        if ($result) {
+                            echo " success";
+                            $user = $_POST['user'];
+                            $auth_email = "INSERT INTO `auth_email` ( `email`, `org_type`) VALUES ('$email', '$user');";
+                            $auth_result = mysqli_query($conn, $auth_email);
+                            if (!($auth_email)) {
+                                "authentication push error NGO";
+                            }
+                        } else {
+                            echo "bhai kya kar raha hai tu";
+                        }
+                    }
+
+                    //for hotels registration
+                    elseif ($_POST['user'] == 'hotel') {
+                        $hotel_reg = "INSERT INTO `hotel` ( `hotel_name`, `hotel_license`, `hotel_address`, `hotel_email`, `hotel_password`, `hotel_number`) VALUES ('$hotel_name', '$hotel_l_num', '$address', '$email', '$pass', '$phone');";
+                        $result = mysqli_query($conn, $hotel_reg);
+                        if ($result) {
+                            echo "success";
+                            $user = $_POST['user'];
+                            $auth_email = "INSERT INTO `auth_email` ( `email`, `org_type`) VALUES ('$email', '$user');";
+                            $auth_result = mysqli_query($conn, $auth_email);
+                            if (!($auth_email)) {
+                                "authentication push error hotel";
+                            }
+                        } else {
+                            echo "bhai kya kar raha hai tu";
+                        }
+
+                        echo "hotel";
+                    }
+
+                    //for singles
+                    else {
+                        $single_reg = "INSERT INTO `singleowner` (`name`, `adhar`, `address`, `email`, `password`, `number`) VALUES ( '$single', '', '$address', '$email', '$pass', '$phone')";
+                        $result = mysqli_query($conn, $single_reg);
+                        if ($result) {
+                            $user = $_POST['user'];
+                            $auth_email = "INSERT INTO `auth_email` ( `email`, `org_type`) VALUES ('$email', '$user');";
+                            $auth_result = mysqli_query($conn, $auth_email);
+                            if (!($auth_email)) {
+                                "authentication push error single";
+                            }
+                            echo "success";
+                        } else {
+                            echo "bhai kya kar raha hai tu";
+                        }
+
+                        echo "single";
+                    }
                 }
             }
-
-            //for hotels registration
-            elseif ($_POST['user'] == 'hotel') {
-                $hotel_reg = "INSERT INTO `hotel` ( `hotel_name`, `hotel_license`, `hotel_address`, `hotel_email`, `hotel_password`, `hotel_number`) VALUES ('$hotel_name', '$hotel_l_num', '$address', '$email', '$pass', '$phone');";
-                $result = mysqli_query($conn, $hotel_reg);
-                if ($result) {
-                    echo "success";
-                    $user=$_POST['user'];
-                    $auth_email="INSERT INTO `auth_email` ( `email`, `org_type`) VALUES ('$email', '$user');";
-                    $auth_result=mysqli_query($conn,$auth_email);
-                    if(!($auth_email)){
-                        "authentication push error hotel";
-                    }
-                } else {
-                    echo "bhai kya kar raha hai tu";
-                }
-
-                echo "hotel";
-            }
-
-            //for singles
-            else {
-                $single_reg = "INSERT INTO `singleowner` (`name`, `adhar`, `address`, `email`, `password`, `number`) VALUES ( '$single', '', '$address', '$email', '$pass', '$phone')";
-                $result = mysqli_query($conn, $single_reg);
-                if ($result) {
-                    $user=$_POST['user'];
-                    $auth_email="INSERT INTO `auth_email` ( `email`, `org_type`) VALUES ('$email', '$user');";
-                    $auth_result=mysqli_query($conn,$auth_email);
-                    if(!($auth_email)){
-                        "authentication push error single";
-                    }
-                    echo "success";
-                } else {
-                    echo "bhai kya kar raha hai tu";
-                }
-
-                echo "single";
-            }
-
-                
         }
-    }
-         }
         ?>
 
     </div>
