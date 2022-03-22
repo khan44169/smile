@@ -1,3 +1,11 @@
+<?php
+include './includes/connectDb.php';
+
+if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_SESSION['single_login'])) {
+} else {
+    header("location:Login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +38,7 @@
                     <input class="textbox wd100 " type="text" name="" id="" placeholder="Food Name">
                 </div>
                 <div id="food-waight">
-                    <label for="food-waight" class="block">Food Name:</label>
+                    <label for="food-waight" class="block">Food Weight:</label>
                     <input class="textbox wd100 " type="text" name="" id="" placeholder="Waight">
                 </div>
                 <div id="food-area">
