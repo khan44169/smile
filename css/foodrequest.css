@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #d9dcdc;
+}
+
+.parent-div {
+    /* position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    height: 20vh;
+    background-color: rgba(89, 23, 116, 0.349);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    border: 3px;
+    border-radius: 10px;
+    box-shadow: 0 7px 15px rgba(0, 0, 0, .6);
+    border-style: solid;
+    border-color: black; */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 20vh;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 2.5vh;
+}
+
+.parent-div:hover {
+    box-shadow: 100px, 150px, 7px, rgb(118, 195, 247);
+    transition: 1s;
+}
+
+.hotel-name-and-description {
+    /* display: inline-block;
+    position: relative;
+    width: 75%;
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none; */
+    width: 70%;
+    height: 100%;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-left: 2vw;
+    padding-top: 1vh;
+}
+
+.accept-request-button-div {
+    width: 30%;
+    height: 100%;
+    /* background-color: black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#triangle {
+    position: absolute;
+    top: 0;
+    background-color: black;
+    width: 100%;
+    height: 70vh;
+    clip-path: polygon(100% 0%, 100% 87%, -45% 0%);
+    z-index: -1;
+}
+
+#accept-request-button {
+    height: 6.5vh;
+    border-radius: 25px;
+    background-color: #8bf117a6;
+    color: black;
+    font-size: larger;
+}
+
+#accept-request-button:hover {
+    background: white;
+    color: green;
+    border-radius: 25px;
+}

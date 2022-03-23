@@ -1,9 +1,3 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-
 html {
     height: 100%;
 }
@@ -12,8 +6,17 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-color: rgba(34, 185, 190, 0.678);
-    height: 100%;
+    background-color: #d9dcdc;
+    /* background: black; */
+}
+
+#triangle {
+    position: absolute;
+    top: 0;
+    background-color: black;
+    width: 100%;
+    height: 70vh;
+    clip-path: polygon(100% 0%, 100% 87%, -45% 0%);
 }
 
 .login-box {
@@ -23,7 +26,7 @@ body {
     width: 50%;
     padding: 40px;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, .4);
+    background: white;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
     border-radius: 10px;
@@ -32,7 +35,7 @@ body {
 .login-box h2 {
     margin: 0 0 30px;
     padding: 0;
-    color: #fff;
+    color: black;
     text-align: center;
 }
 
@@ -43,11 +46,11 @@ body {
 .login-box .user-box input {
     width: 100%;
     padding: 10px 0;
-    margin-bottom: 1.2em;
     font-size: 16px;
-    color: #fff;
+    color: black;
+    margin-bottom: 30px;
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid black;
     outline: none;
     background: transparent;
 }
@@ -58,7 +61,7 @@ body {
     left: 0;
     padding: 10px 0;
     font-size: 16px;
-    color: #fff;
+    color: black;
     pointer-events: none;
     transition: .5s;
 }
@@ -68,21 +71,21 @@ body {
     top: -20px;
     left: 0;
     color: #03e9f4;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .login-box form .submit-button {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    background-color: #35643f9c;
-    color: white;
+    background-color: #8bf117a6;
+    color: black;
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
     transition: .5s;
-    margin-top: 40px;
+    margin-top: 20px;
     letter-spacing: 4px
 }
 
@@ -93,28 +96,28 @@ body {
     /*box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;*/
 }
 
-
-/* .login-box a span {
-    position: absolute;
-    display: block;
-} */
-
-#user {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.user,
+label {
+    color: black;
+    padding: 10px 0;
+    font-size: 16px;
 }
 
 .hide {
     display: none;
 }
 
+#NGO-signup {
+    animation-name: appear-NGO-signup;
+    animation-duration: 2.5s;
+}
+
+#HOTEL-signup {
+    animation-name: appear-HOTEL-signup;
+    animation-duration: 2.5s;
+}
+
 @media only screen and (max-width: 600px) {
-    #user {
-        /* height: 1vh; */
-        /* flex-direction: column; */
-    }
     #signup-div {
         width: 75%;
     }
@@ -122,9 +125,9 @@ body {
 
 
 /* @media only screen and (max-width: 300px) {
-    #signup-div {
-        width: 100%;
-    }
+  #signup-div {
+      width: 100%;
+  }
 } */
 
 @media only screen and (max-width:350px) {
@@ -132,3 +135,23 @@ body {
         width: 100%;
     }
 }
+
+@keyframes appear-NGO-signup {
+    from {
+        opacity: .5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes appear-HOTEL-signup {
+    from {
+        opacity: .5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes appear-single

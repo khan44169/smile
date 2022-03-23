@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#parent-div {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    /* grid-template-columns: 50%, 50%; */
+    height: 100px;
+    width: 100%;
+    background-color: aqua;
+}
+
+#child-div1 {
+    background-color: brown;
+    color: coral;
+    width: 75%;
+    height: 100px;
+    overflow: hidden;
+}
+
+#child-div2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: blueviolet;
+    width: 25%;
+}
+
+button {}
