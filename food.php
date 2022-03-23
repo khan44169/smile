@@ -1,3 +1,11 @@
+<?php
+include './includes/connectDb.php';
+
+if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_SESSION['single_login'])) {
+} else {
+    header("location:Login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,6 +19,7 @@
   <body>
     <div id="triangle"></div>
     <div id="food-section">
+<<<<<<< HEAD
       <div id="form-section" class="wd50">
       <form action="" method="post" class="form">
         <div id="food-type" class="wd100">
@@ -47,6 +56,39 @@
             <div id="food-area">
                 <label for="food-waight" class="block">Area:</label>
             </div>
+=======
+        <div id="form-section" class="wd50">
+            <form action="" method="post" class="form">
+                <div id="food-type" class="wd100">
+                    <label>
+                        <input type="radio" name="foodtype" id="foodtype" value="checkedValue" />
+                        Non-veg
+                    </label>
+                    <label>
+                        <input type="radio" name="foodtype" id="foodtype" value="checkedValue" />
+                        Veg
+                    </label>
+                </div>
+                <div id="food-name">
+                    <label for="food-name" class="block">Food Name:</label>
+                    <input class="textbox wd100 " type="text" name="" id="" placeholder="Food Name">
+                </div>
+                <div id="food-waight">
+                    <label for="food-waight" class="block">Food Weight:</label>
+                    <input class="textbox wd100 " type="text" name="" id="" placeholder="Waight">
+                </div>
+                <div id="food-area">
+                    <label for="food-waight" class="block">Area:</label>
+
+                    <input class="textbox wd100 " type="text" name="" id="" placeholder="Waight">
+                    <p id="note">Note:please specify area in which Ngo should be located </p>
+                </div>
+                <div class="wd50" id="btn-section">
+                    <input type="button" class="btn" value="I have Food">
+                </div>
+
+            </form>
+>>>>>>> 287da3c855d0405c033e00f33303c942d94c75f9
         </div>
       
         <input  class="textbox wd100 " type="text" name="" id="" placeholder="Waight">
