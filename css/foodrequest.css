@@ -57,7 +57,7 @@ body {
     width: 70%;
     height: 100%;
     text-decoration: none;
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis; */
     overflow: hidden;
     padding-left: 2vw;
     padding-top: 1vh;
