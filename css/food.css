@@ -5,7 +5,7 @@
 }
 
 #triangle {
-    position: absolute;
+    position: fixed;
     top: 0;
     background-color: black;
     width: 100%;
@@ -14,7 +14,6 @@
 }
 
 body {
-<<<<<<< HEAD
     position: absolute;
     height: 100vh;
     width: 100%;
@@ -23,13 +22,6 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #d9dcdc;
-=======
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background: rgba(16, 126, 89, 0.884);
-    /* background: #F3E9F1; */
->>>>>>> 287da3c855d0405c033e00f33303c942d94c75f9
 }
 
 #food-section {
