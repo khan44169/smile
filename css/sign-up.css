@@ -70,30 +70,29 @@ body {
 .login-box .user-box input:valid~label {
     top: -20px;
     left: 0;
-    color: #03e9f4;
+    color: #000000;
     font-size: 14px;
 }
 
-.login-box form .submit-button {
+
+#btn{
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    background-color: #8bf117a6;
-    color: black;
+    /* background-color: #35643f9c; */
+    background: black;
+    color: white;
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
     overflow: hidden;
-    transition: .5s;
-    margin-top: 20px;
-    letter-spacing: 4px
-}
-
-.login-box .submit-button:hover {
-    background: black;
-    color: #fff;
+    transition: 0.5s;
+    margin-top: 40px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border: none;
     border-radius: 5px;
-    /*box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;*/
+    
 }
 
 .user,
@@ -106,7 +105,7 @@ label {
 .hide {
     display: none;
 }
-
+ 
 #NGO-signup {
     animation-name: appear-NGO-signup;
     animation-duration: 2.5s;
@@ -154,4 +153,3 @@ label {
     }
 }
 
-@keyframes appear-single

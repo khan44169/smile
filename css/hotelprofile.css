@@ -11,7 +11,7 @@ body {
     margin-top: 40px;
 }
 
-img {
+.img {
     display: block;
     width: 725px;
     height: 400px;
@@ -63,7 +63,7 @@ body {
     display: none
 }
 
-img {
+.img {
     vertical-align: middle;
 }
 
@@ -71,10 +71,9 @@ img {
 /* Slideshow container */
 
 .slideshow-container {
-    max-width: 1000px;
+   max-width: 50%;
+   height: 20vh;
     position: relative;
-    margin: auto;
-    margin-top: 20px;
 }
 
 

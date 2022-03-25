@@ -44,9 +44,9 @@
                     <label>License Number</label>
                 </div>
             </div>
-           
-            <div id="signup-div" >
-                <div class="user-box" id="single-user-name" class="hide"    >
+
+            <div id="signup-div">
+                <div class="user-box" id="single-user-name" class="hide">
                     <input type="text" id="" name="single" required>
                     <label>Name</label>
                 </div>
@@ -67,8 +67,9 @@
                     <label>Address</label>
                 </div>
             </div>
-      
-            <input type="submit" value="Submit">
+
+            <input type="submit" value="Sign Up" id="btn">
+            <!-- <input type="submit" name="submit" value="Login" id="btn"> -->
         </form>
         <?php
         include './includes/connectDb.php';
@@ -177,7 +178,7 @@
         document.getElementById('HOTEL-signup').style.display = 'none';
         document.getElementById('single-user-name').style.display = 'none';
         document.querySelector('#single').style.display = 'none';
-        
+
     }
 
     function show_hotel() {
@@ -192,7 +193,7 @@
         document.getElementById('HOTEL-signup').style.display = 'none';
         document.getElementById('single-user-name').style.display = 'block';
         document.querySelector('#single').style.display = 'block';
-        
+
     }
 </script>
 

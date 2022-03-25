@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/HotelProfile.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <title>Hotel Profile</title>
 </head>
 
 <body>
+    <?php include "./nav.php"; ?>
     <div class="slideshow-container">
 
         <div class="mySlides fade">
@@ -19,7 +19,7 @@
             <div class="text">Front view</div>
         </div>
 
-        <div class="mySlides fade">
+        <div class="mySlides fade .img">
             <div class="numbertext">2 / 3</div>
             <img src="./pictures/maxresdefault.jpg" style="width:100%">
             <div class="text">Room view</div>

@@ -1,10 +1,9 @@
 <?php
-include './includes/connectDb.php';
 
-if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_SESSION['single_login'])) {
-} else {
-  header("location:Login.php");
-}
+// if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_SESSION['single_login'])) {
+// } else {
+//   header("location:Login.php");
+// }
 
 ?>
 <!DOCTYPE html>
@@ -20,26 +19,8 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
 </head>
 
 <body>
-
-  <nav class="navbar">
-    <div class="navbar-container container">
-      <img src="cover.png" alt="" class="logo">
-      <input type="checkbox" name="" id="" />
-      <div class="hamburger-lines">
-        <span class="line line1"></span>
-        <span class="line line2"></span>
-        <span class="line line3"></span>
-      </div>
-      <ul class="menu-items">
-        <!-- <li><a href="avaialbleFood.php">I want food</a></li> -->
-        <li><a href="foodAvaialble.php">I want food</a></li>
-        <li><a href="signup.php">logIn</a></li>
-        <li><a href="signup.php">SignIn</a></li>
-        <li><a href="Logout.php"> Logout</a></li>
-      </ul>
-    </div>
-  </nav>
-
+  <?php include './nav.php'; ?>
+  <div id="triangle"></div>
   <?php
 
   if (isset($_SESSION['single_login'])) {
@@ -56,10 +37,20 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
   }
   ?>
   <div id="ihavefood">
-    <ul>
-      <!-- <li><a href="availableFood.php">I Want Food</a></li> -->
-      <li><a href="food.php"> I Have Food</a></li>
-    </ul>
+    <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+      <button class=" btn-hover" name="ihavefoodbtn">I have Food</button>
+    </form>
+    <?php
+    include './includes/connectDb.php';
+    if (isset($_POST['ihavefoodbtn'])) {
+      if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_SESSION['single_login'])) {
+        header("location:food.php");
+      } else {
+        header("location:Login.php");
+      }
+    }
+    ?>
+
   </div>
 
 </body>
