@@ -17,6 +17,7 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
 </head>
 
 <body>
+    <?php include './nav.php'; ?>
     <div id="triangle"></div>
     <div class="login-box">
         <h2>Login</h2>
@@ -40,6 +41,7 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
                 <label>Password</label>
             </div>
             <input type="submit" name="submit" value="Login" id="btn">
+            <a href="signup.php" class="direction">New User -> Kindly Register</a>
         </form>
         <?php
         if (isset($_POST['submit'])) {
@@ -54,6 +56,8 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
                 $result = mysqli_num_rows($queryResult);
                 if ($result > 0) {
                     $_SESSION['ngo_login'] = $ngoData;
+                    $_SESSION['org_type'] = "NGO";
+                    $_SESSION['login'] = $ngoData;
                     header("location: index.php");
                 }
             }
@@ -66,6 +70,8 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
                 $result = mysqli_num_rows($queryResult);
                 if ($result > 0) {
                     $_SESSION['hotel_login'] = $hotelData;
+                    $_SESSION['org_type'] = "hotel";
+                    $_SESSION['login'] = $hotelData;
                     header("location: index.php");
                 }
             }
@@ -77,6 +83,8 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
                 $result = mysqli_num_rows($queryResult);
                 if ($result > 0) {
                     $_SESSION['single_login'] = $singleData;
+                    $_SESSION['org_type'] = "single";
+                    $_SESSION['login'] = $singleData;
                     header("location: index.php");
                 }
             }

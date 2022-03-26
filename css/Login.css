@@ -1,12 +1,10 @@
-html {
-    height: 100%;
-}
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500;700&family=Fredoka+One&family=Righteous&family=Yeon+Sung&display=swap');
 
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    background-color: #d9dcdc;
+    background-color: white;
+    font-family: 'Baloo Thambi 2', cursive;
 }
 #triangle {
     position: fixed;
@@ -76,29 +74,12 @@ body {
 }
 
 .login-box form a {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #03e9f4;
-    font-size: 16px;
+    color: #000000;
     text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: .5s;
-    margin-top: 40px;
-    letter-spacing: 4px
+    padding: 10px;
+  
 }
 
-.login-box a:hover {
-    background: #7f8638;
-    color: #fff;
-    border-radius: 5px;
-}
-
-.login-box a span {
-    position: absolute;
-    display: block;
-}
 
 #user {
     display: flex;
@@ -113,8 +94,7 @@ body {
 #btn{
     position: relative;
     display: inline-block;
-    padding: 10px 20px;
-    /* background-color: #35643f9c; */
+    padding: 10px 10px;
     background: black;
     color: white;
     font-size: 16px;
@@ -122,7 +102,7 @@ body {
     text-transform: uppercase;
     overflow: hidden;
     transition: 0.5s;
-    margin-top: 40px;
+    margin-top: 20px;
     letter-spacing: 2px;
     cursor: pointer;
     border: none;
@@ -130,8 +110,6 @@ body {
     
 }
 
-/* #btn:hover{
-    background: black;
-    color: white;
-    border-radius: 5px;
-} */
+input[type="radio" ]{
+    /* margin-top: 5px; */
+}

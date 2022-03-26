@@ -11,12 +11,13 @@
 </head>
 
 <body>
+    <div id="triangle"></div>
     <div class="login-box" id="signup-div">
         <h2>Register yourself...</h2>
         <form action='<?php echo htmlentities($_SERVER['PHP_SELF']); ?>' name="signupform" method="post">
             <div class="user" id="user" name='user'>
                 <!-- <label>You Are!!!</label></br> -->
-                  <input type="radio" id="NGO" name="user" value="NGO" onclick="show_NGO();" required>
+                  <input type="radio" id="NGO" name="user" value="NGO" onclick="show_NGO();">
                   <label for="NGO">NGO</label><br>
                   <input type="radio" id="HOTEL" name="user" value="hotel" onclick="show_hotel();">
                   <label for="HOTEL">HOTEL</label><br>
@@ -25,27 +26,27 @@
             </div>
             <div id="NGO-signup" class="hide">
                 <div class="user-box">
-                    <input type="text" id="" name="ngo_name" required>
+                    <input type="text" id="" name="ngo_name">
                     <label>NGO Name</label>
                 </div>
                 <div class="user-box">
-                    <input type="text" id="" name="r_num" required>
+                    <input type="text" id="" name="r_num">
                     <label>Registeration Number</label>
                 </div>
             </div>
             <div id="HOTEL-signup" class="hide">
                 <div class="user-box">
-                    <input type="text" id="" name="hotel_name" required>
+                    <input type="text" id="" name="hotel_name">
                     <label>Hotel Name</label>
                 </div>
                 <div class="user-box">
-                    <input type="text" id="" name="hotel_l_num" required>
+                    <input type="text" id="" name="hotel_l_num">
                     <label>License Number</label>
                 </div>
             </div>
             <div id="single">
                 <div class="user-box">
-                    <input type="text" id="" name="single" required>
+                    <input type="text" id="" name="single">
                     <label>Name</label>
                 </div>
 
@@ -74,6 +75,7 @@
                 Submit
             </button> -->
             <input id="btn" type="submit" value="Submit">
+            <a href="login.php" class="direction">Already Registered -> Go to Login.</a>
         </form>
         <?php
         include './includes/connectDb.php';
@@ -112,18 +114,15 @@
                     //for NGO registration
                     if ($_POST['user'] == 'NGO') {
                         echo "NGO";
-                        $NGO_reg = "INSERT INTO `ngo` (`ngo_name`, `ngo_registeration`, `ngo_address`, `ngo_email`, `ngo_password`, `ngo_number`) VALUES ( '$NGO_name', '$r_num', '$address', '$email', '$pass', '$phone')";
-                        $result = mysqli_query($conn, $NGO_reg);
-
-
-                        if ($result) {
-                            echo " success";
-                            $user = $_POST['user'];
-                            $auth_email = "INSERT INTO `auth_email` ( `email`, `org_type`) VALUES ('$email', '$user');";
-                            $auth_result = mysqli_query($conn, $auth_email);
-                            if (!($auth_email)) {
-                                "authentication push error NGO";
-                            }
+                        // echo " success";
+                        $user = $_POST['user'];
+                        $auth_email = "INSERT INTO `auth_email` ( `email`, `org_type`) VALUES ('$email', '$user');";
+                        $auth_result = mysqli_query($conn, $auth_email);
+                        $id = mysqli_insert_id($conn);
+                        echo $id;
+                        if ($auth_result) {
+                            $NGO_reg = "INSERT INTO `ngo` (`id`,`ngo_name`, `ngo_registeration`, `ngo_address`, `ngo_email`, `ngo_password`, `ngo_number`) VALUES ('$id','$NGO_name', '$r_num', '$address', '$email', '$pass', '$phone')";
+                            $result = mysqli_query($conn, $NGO_reg);
                         } else {
                             echo "bhai kya kar raha hai tu";
                         }
@@ -131,35 +130,32 @@
 
                     //for hotels registration
                     elseif ($_POST['user'] == 'hotel') {
-                        $hotel_reg = "INSERT INTO `hotel` ( `hotel_name`, `hotel_license`, `hotel_address`, `hotel_email`, `hotel_password`, `hotel_number`) VALUES ('$hotel_name', '$hotel_l_num', '$address', '$email', '$pass', '$phone');";
-                        $result = mysqli_query($conn, $hotel_reg);
-                        if ($result) {
-                            echo "success";
-                            $user = $_POST['user'];
-                            $auth_email = "INSERT INTO `auth_email` ( `email`, `org_type`) VALUES ('$email', '$user');";
-                            $auth_result = mysqli_query($conn, $auth_email);
-                            if (!($auth_email)) {
-                                "authentication push error hotel";
-                            }
+                        echo "success";
+                        $user = $_POST['user'];
+                        $auth_email = "INSERT INTO `auth_email` ( `email`, `org_type`) VALUES ('$email', '$user');";
+                        $auth_result = mysqli_query($conn, $auth_email);
+                        $id = mysqli_insert_id($conn);
+                        echo $id;
+
+                        if ($auth_result) {
+                            $hotel_reg = "INSERT INTO `hotel` ( `id`,`hotel_name`, `hotel_license`, `hotel_address`, `hotel_email`, `hotel_password`, `hotel_number`) VALUES ('$id','$hotel_name', '$hotel_l_num', '$address', '$email', '$pass', '$phone');";
+                            $result = mysqli_query($conn, $hotel_reg);
                         } else {
                             echo "bhai kya kar raha hai tu";
                         }
-
-                        echo "hotel";
                     }
 
                     //for singles
                     else {
-                        $single_reg = "INSERT INTO `singleowner` (`name`, `adhar`, `address`, `email`, `password`, `number`) VALUES ( '$single', '', '$address', '$email', '$pass', '$phone')";
-                        $result = mysqli_query($conn, $single_reg);
-                        if ($result) {
-                            $user = $_POST['user'];
-                            $auth_email = "INSERT INTO `auth_email` ( `email`, `org_type`) VALUES ('$email', '$user');";
-                            $auth_result = mysqli_query($conn, $auth_email);
-                            if (!($auth_email)) {
-                                "authentication push error single";
-                            }
-                            echo "success";
+                        $user = $_POST['user'];
+                        $auth_email = "INSERT INTO `auth_email` ( `email`, `org_type`) VALUES ('$email', '$user');";
+                        $auth_result = mysqli_query($conn, $auth_email);
+                        $id = mysqli_insert_id($conn);
+                        echo $id;
+
+                        if ($auth_result) {
+                            $single_reg = "INSERT INTO `singleowner` (`id`,`name`, `adhar`, `address`, `email`, `password`, `number`) VALUES ('$id','$single', '', '$address', '$email', '$pass', '$phone')";
+                            $result = mysqli_query($conn, $single_reg);
                         } else {
                             echo "bhai kya kar raha hai tu";
                         }

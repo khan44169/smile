@@ -4,6 +4,7 @@
 }
 
 body {
+<<<<<<< HEAD
     position: absolute;
     justify-content: center;
     align-items: center;
@@ -12,9 +13,21 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #d9dcdc;
+=======
+  /* margin-top: 20px; */
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  background-color: #d9dcdc;
+>>>>>>> feb8013e1daa6352ddf3ca01e0176086b7d6c456
 }
 
 #triangle {
+<<<<<<< HEAD
     position: absolute;
     top: 0;
     background-color: black;
@@ -22,6 +35,15 @@ body {
     height: 70vh;
     clip-path: polygon(100% 0%, 100% 87%, -45% 0%);
     z-index: -1;
+=======
+  position: fixed;
+  top: 0;
+  background-color: black;
+  width: 100%;
+  height: 70vh;
+  clip-path: polygon(100% 0%, 100% 87%, -45% 0%);
+  z-index: -1;
+>>>>>>> feb8013e1daa6352ddf3ca01e0176086b7d6c456
 }
 
 .request-div {
@@ -43,6 +65,7 @@ body {
 }
 
 .description {
+<<<<<<< HEAD
     width: 70%;
     /* height: 100%; */
     text-decoration: none;
@@ -52,11 +75,28 @@ body {
     display: flex;
     flex-direction: column;
     border: 2px solid blue;
+=======
+  width: 70%;
+  /* height: 100%; */
+  text-decoration: none;
+  overflow: hidden;
+  padding-left: 2vw;
+  padding-top: 1vh;
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid blue; */
+>>>>>>> feb8013e1daa6352ddf3ca01e0176086b7d6c456
 }
 
 #hotel {
+<<<<<<< HEAD
     width: 100%;
     border: 2px solid red;
+=======
+  font-size: 1.5em;
+  width: 100%;
+  /* border: 2px solid red; */
+>>>>>>> feb8013e1daa6352ddf3ca01e0176086b7d6c456
 }
 
 #contact,
