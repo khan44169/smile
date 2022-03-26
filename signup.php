@@ -25,55 +25,55 @@
             </div>
             <div id="NGO-signup" class="hide">
                 <div class="user-box">
-                    <input type="text" id="" name="ngo_name">
+                    <input type="text" id="" name="ngo_name" required>
                     <label>NGO Name</label>
                 </div>
                 <div class="user-box">
-                    <input type="text" id="" name="r_num">
+                    <input type="text" id="" name="r_num" required>
                     <label>Registeration Number</label>
                 </div>
             </div>
             <div id="HOTEL-signup" class="hide">
                 <div class="user-box">
-                    <input type="text" id="" name="hotel_name">
+                    <input type="text" id="" name="hotel_name" required>
                     <label>Hotel Name</label>
                 </div>
                 <div class="user-box">
-                    <input type="text" id="" name="hotel_l_num">
+                    <input type="text" id="" name="hotel_l_num" required>
                     <label>License Number</label>
                 </div>
             </div>
             <div id="single">
                 <div class="user-box">
-                    <input type="text" id="" name="single">
+                    <input type="text" id="" name="single" required>
                     <label>Name</label>
                 </div>
 
             </div>
             <div class="user-box">
-                <input type="text" id="" name="email">
+                <input type="text" id="" name="email" required>
                 <label>E-mail</label>
             </div>
             <div class="user-box">
-                <input type="number" id="" name="phone">
+                <input type="number" id="" name="phone" required>
                 <label>Phone</label>
             </div>
             <div class="user-box">
-                <input type="password" id="" name="pass">
+                <input type="password" id="" name="pass" required>
                 <label>Password</label>
             </div>
             <div class="user-box">
-                <input type="password" id="" name="cpass">
+                <input type="password" id="" name="cpass" required>
                 <label>Confirm Password</label>
             </div>
             <div class="user-box">
-                <input type="text" id="" name="address">
+                <input type="text" id="" name="address" required>
                 <label>Address</label>
             </div>
             <!-- <button type="submit" class="submit-button">
                 Submit
             </button> -->
-            <input type="submit" value="Submit">
+            <input id="btn" type="submit" value="Submit">
         </form>
         <?php
         include './includes/connectDb.php';

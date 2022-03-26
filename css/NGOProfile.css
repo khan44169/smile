@@ -72,9 +72,9 @@ img {
 
 .slideshow-container {
     max-width: 1000px;
-    position: relative;
-    margin: auto;
-    margin-top: 20px;
+    height: 20vh;
+     position: relative;
+    
 }
 
 

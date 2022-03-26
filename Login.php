@@ -17,6 +17,7 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
 </head>
 
 <body>
+    <div id="triangle"></div>
     <div class="login-box">
         <h2>Login</h2>
         <form method="post">
@@ -53,7 +54,7 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
                 $result = mysqli_num_rows($queryResult);
                 if ($result > 0) {
                     $_SESSION['ngo_login'] = $ngoData;
-                    header("location: ngo.php");
+                    header("location: index.php");
                 }
             }
 
