@@ -1,9 +1,9 @@
 <?php
 
-// if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_SESSION['single_login'])) {
-// } else {
-//   header("location:Login.php");
-// }
+if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_SESSION['single_login'])) {
+} else {
+  header("location:Login.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -35,10 +35,12 @@
     // echo "My Name is " . $_SESSION['ngo_login']['ngo_name'];
     // echo "<br>Ngo Staff";
   }
+
   ?>
   <div id="ihavefood">
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
       <button class=" btn-hover" name="ihavefoodbtn">I have Food</button>
+
     </form>
     <?php
     include './includes/connectDb.php';

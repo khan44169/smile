@@ -54,6 +54,8 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
                 $result = mysqli_num_rows($queryResult);
                 if ($result > 0) {
                     $_SESSION['ngo_login'] = $ngoData;
+                    $_SESSION['org_type'] = "NGO";
+                    $_SESSION['login'] = $ngoData;
                     header("location: index.php");
                 }
             }
@@ -66,6 +68,8 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
                 $result = mysqli_num_rows($queryResult);
                 if ($result > 0) {
                     $_SESSION['hotel_login'] = $hotelData;
+                    $_SESSION['org_type'] = "hotel";
+                    $_SESSION['login'] = $hotelData;
                     header("location: index.php");
                 }
             }
@@ -77,6 +81,8 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
                 $result = mysqli_num_rows($queryResult);
                 if ($result > 0) {
                     $_SESSION['single_login'] = $singleData;
+                    $_SESSION['org_type'] = "single";
+                    $_SESSION['login'] = $singleData;
                     header("location: index.php");
                 }
             }

@@ -82,13 +82,16 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
     $food_name = $_POST['foodname'];
     $food_weight = $_POST['food_weight'];
     $area = $_POST['area'];
+    $org_type = $_SESSION['org_type'];
+    $raiser_id = $_SESSION['login']['id'];
 
-    $sql_query = "INSERT INTO `foodraised` ( `food_name`, `food_type`, `food_weight`, `area`) VALUES ( '$food_name', '$foodtype', '$food_weight', '$area');";
+    $sql_query = "INSERT INTO `foodraised` (`food_type`, `food_name`, `food_weight`, `raiser_id`, `org-type`) VALUES ( '$foodtype', '$food_name', '$food_weight', '$raiser_id', '$org_type')";
     $query_result = mysqli_query($conn, $sql_query);
     if ($query_result) {
       echo "success ";
     } else {
       echo "bhai yeh kya kar raha hai tu";
+      echo mysqli_error($conn);
     }
   }
   ?>
