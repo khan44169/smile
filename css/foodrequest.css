@@ -15,7 +15,7 @@ body {
   background-color: #d9dcdc;
 }
 #triangle {
-  position: absolute;
+  position: fixed;
   top: 0;
   background-color: black;
   width: 100%;
