@@ -50,11 +50,11 @@ body {
   padding-top: 1vh;
   display: flex;
   flex-direction: column;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
 }
 #hotel {
   width: 100%;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 #contact,
 #food-detail {

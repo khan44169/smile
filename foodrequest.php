@@ -12,9 +12,8 @@
 <body>
     <div id="triangle"></div>
     <?php
-
-
-
+    include './includes/connectDb.php';
+    
 
     ?>
     <div id="request-div" class="request-div">
