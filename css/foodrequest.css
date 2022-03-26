@@ -4,18 +4,13 @@
 }
 
 body {
-    margin-top: -20px;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #d9dcdc;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: 'Baloo Thambi 2', cursive;
 }
 #triangle {
-  position: absolute;
+  position: fixed;
   top: 0;
   background-color: black;
   width: 100%;

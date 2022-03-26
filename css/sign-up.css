@@ -1,13 +1,14 @@
 html {
   height: 100%;
 }
-
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500;700&family=Fredoka+One&family=Righteous&family=Yeon+Sung&display=swap');
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   background-color: #d9dcdc;
   /* background: black; */
+  font-family: 'Baloo Thambi 2', cursive;
 }
 
 #triangle {
@@ -28,9 +29,8 @@ body {
   transform: translate(-50%, -50%);
   background: white;
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
   border-radius: 10px;
-  max-height: 100%;
 }
 
 .login-box h2 {
@@ -46,10 +46,11 @@ body {
 
 .login-box .user-box input {
   width: 100%;
-  padding: 10px 0;
+  /* padding: 5px 0; */
   font-size: 16px;
   color: black;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   border: none;
   border-bottom: 1px solid black;
   outline: none;
@@ -60,22 +61,29 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 10px 0;
+  padding: 5px 0;
   font-size: 16px;
   color: black;
   pointer-events: none;
-  transition: 0.5s;
+  transition: .5s;
 }
 
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
   top: -20px;
   left: 0;
   color: #000000;
   font-size: 14px;
 }
+.login-box form a {
+  color: #000000;
+  text-decoration: none;
+  padding: 10px;
 
-#btn {
+}
+
+
+#btn{
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -87,11 +95,12 @@ body {
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
-  margin-top: 15px;
+  margin-top: 40px;
   letter-spacing: 2px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
+  
 }
 
 .user,
@@ -117,42 +126,38 @@ label {
 
 @media only screen and (max-width: 600px) {
   #signup-div {
-    width: 75%;
+      width: 75%;
   }
 }
 
+
 /* @media only screen and (max-width: 300px) {
-  #signup-div {
-      width: 100%;
-  }
+#signup-div {
+    width: 100%;
+}
 } */
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width:350px) {
   #signup-div {
-    width: 100%;
+      width: 100%;
   }
 }
 
 @keyframes appear-NGO-signup {
   from {
-    opacity: 0.5;
+      opacity: .5;
   }
   to {
-    opacity: 1;
+      opacity: 1;
   }
 }
 
 @keyframes appear-HOTEL-signup {
   from {
-    opacity: 0.5;
+      opacity: .5;
   }
   to {
-    opacity: 1;
+      opacity: 1;
   }
 }
-<<<<<<< HEAD
 
-
-/* @keyframes appear-single */
-=======
->>>>>>> 3bf6aa346cda7601e96cddc43cd1ea6232ea9157

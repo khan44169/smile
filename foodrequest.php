@@ -1,3 +1,6 @@
+<?php
+include './includes/connectDb.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,12 +13,8 @@
 </head>
 
 <body>
+    <?php include './nav.php'; ?>
     <div id="triangle"></div>
-    <?php
-    include './includes/connectDb.php';
-    
-
-    ?>
     <div id="request-div" class="request-div">
 
         <div id="description" class="description">

@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <div id="triangle"></div>
     <div class="login-box" id="signup-div">
         <h2>Register yourself...</h2>
         <form action='<?php echo htmlentities($_SERVER['PHP_SELF']); ?>' name="signupform" method="post">
@@ -74,6 +75,7 @@
                 Submit
             </button> -->
             <input id="btn" type="submit" value="Submit">
+            <a href="login.php" class="direction">Already Registered -> Go to Login.</a>
         </form>
         <?php
         include './includes/connectDb.php';

@@ -19,6 +19,7 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
 </head>
 
 <body>
+  <?php include './nav.php'; ?>
   <div id="triangle"></div>
   <div id="food-section">
     <div id="form-section" class="wd50">
