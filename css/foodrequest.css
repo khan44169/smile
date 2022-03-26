@@ -1,9 +1,10 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+<<<<<<< HEAD
     margin-top: -20px;
     position: absolute;
     justify-content: center;
@@ -13,87 +14,87 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #d9dcdc;
+=======
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  background-color: #d9dcdc;
+>>>>>>> 3bf6aa346cda7601e96cddc43cd1ea6232ea9157
 }
-
-.parent-div {
-    /* position: relative;
-    display: flex;
-    flex-direction: row;
-    width: 75%;
-    height: 20vh;
-    background-color: rgba(89, 23, 116, 0.349);
-    color: white;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    padding: 10px;
-    border: 3px;
-    border-radius: 10px;
-    box-shadow: 0 7px 15px rgba(0, 0, 0, .6);
-    border-style: solid;
-    border-color: black; */
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    width: 70%;
-    height: 20vh;
-    background-color: white;
-    border-radius: 10px;
-    margin-bottom: 2.5vh;
-}
-
-.parent-div:hover {
-    box-shadow: 100px, 150px, 7px, rgb(118, 195, 247);
-    transition: 1s;
-}
-
-.hotel-name-and-description {
-    /* display: inline-block;
-    position: relative;
-    width: 75%;
-    font-size: 20px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-decoration: none; */
-    width: 70%;
-    height: 100%;
-    text-decoration: none;
-    /* text-overflow: ellipsis; */
-    overflow: hidden;
-    padding-left: 2vw;
-    padding-top: 1vh;
-}
-
-.accept-request-button-div {
-    width: 30%;
-    height: 100%;
-    /* background-color: black; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 #triangle {
-    position: absolute;
-    top: 0;
-    background-color: black;
-    width: 100%;
-    height: 70vh;
-    clip-path: polygon(100% 0%, 100% 87%, -45% 0%);
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  background-color: black;
+  width: 100%;
+  height: 70vh;
+  clip-path: polygon(100% 0%, 100% 87%, -45% 0%);
+  z-index: -1;
 }
 
-#accept-request-button {
-    height: 6.5vh;
-    border-radius: 25px;
-    background-color: #8bf117a6;
-    color: black;
-    font-size: larger;
+.request-div {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  /* max-height: 20vh; */
+  background-color: white;
+  border-radius: 7px;
+  margin: 1.5vh;
+  align-items: center;
+  /* justify-content: space-between; */
 }
 
-#accept-request-button:hover {
-    background: white;
-    color: green;
-    border-radius: 25px;
+.request-div:hover {
+  box-shadow: 100px, 150px, 7px, rgb(118, 195, 247);
+  transition: 5s;
+}
+
+.description {
+  width: 70%;
+  /* height: 100%; */
+  text-decoration: none;
+  overflow: hidden;
+  padding-left: 2vw;
+  padding-top: 1vh;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid blue;
+}
+#hotel {
+  width: 100%;
+  border: 2px solid red;
+}
+#contact,
+#food-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.acceptbtn-div {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#accept-btn {
+  border-radius: 7px;
+  background-color: #031d66;
+  color: rgb(255, 254, 254);
+  padding: 3%;
+  margin: 1%;
+  /* font-size: larger; */
+}
+
+#accept-btn:hover {
+  background: white;
+  color: green;
+  /* border-radius: 10px; */
 }

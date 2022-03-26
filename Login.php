@@ -17,6 +17,7 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
 </head>
 
 <body>
+    <div id="triangle"></div>
     <div class="login-box">
         <h2>Login</h2>
         <form method="post">

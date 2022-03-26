@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <div id="triangle"></div>
     <div class="login-box" id="signup-div">
         <h2>Register yourself...</h2>
         <form action='<?php echo htmlentities($_SERVER['PHP_SELF']); ?>' name="signupform" method="post">
@@ -25,50 +24,56 @@
                   <label for="SINGLE">SINGLE OWNER</label>
             </div>
             <div id="NGO-signup" class="hide">
-                <div class="user-box" id="">
-                    <input type="text" id="" name="" required>
+                <div class="user-box">
+                    <input type="text" id="" name="ngo_name" required>
                     <label>NGO Name</label>
                 </div>
-                <div class="user-box" id="">
-                    <input type="text" id="" name="" required>
-                    <label>License Number</label>
+                <div class="user-box">
+                    <input type="text" id="" name="r_num" required>
+                    <label>Registeration Number</label>
                 </div>
             </div>
             <div id="HOTEL-signup" class="hide">
-                <div class="user-box" id="">
-                    <input type="text" id="" name="" required>
+                <div class="user-box">
+                    <input type="text" id="" name="hotel_name" required>
                     <label>Hotel Name</label>
                 </div>
-                <div class="user-box" id="">
-                    <input type="text" id="" name="" required>
+                <div class="user-box">
+                    <input type="text" id="" name="hotel_l_num" required>
                     <label>License Number</label>
                 </div>
             </div>
-           
-            <div id="signup-div" >
-                <div class="user-box" id="single-user-name" class="hide"    >
+            <div id="single">
+                <div class="user-box">
                     <input type="text" id="" name="single" required>
                     <label>Name</label>
                 </div>
-                <div class="user-box">
-                    <input type="text" id="" name="" required>
-                    <label>E-mail</label>
-                </div>
-                <div class="user-box">
-                    <input type="password" id="" name="" required>
-                    <label>Password</label>
-                </div>
-                <div class="user-box">
-                    <input type="password" id="" name="" required>
-                    <label>Confirm Password</label>
-                </div>
-                <div class="user-box">
-                    <input type="text" id="" name="" required>
-                    <label>Address</label>
-                </div>
+
             </div>
-      
-            <input type="submit" value="Submit">
+            <div class="user-box">
+                <input type="text" id="" name="email" required>
+                <label>E-mail</label>
+            </div>
+            <div class="user-box">
+                <input type="number" id="" name="phone" required>
+                <label>Phone</label>
+            </div>
+            <div class="user-box">
+                <input type="password" id="" name="pass" required>
+                <label>Password</label>
+            </div>
+            <div class="user-box">
+                <input type="password" id="" name="cpass" required>
+                <label>Confirm Password</label>
+            </div>
+            <div class="user-box">
+                <input type="text" id="" name="address" required>
+                <label>Address</label>
+            </div>
+            <!-- <button type="submit" class="submit-button">
+                Submit
+            </button> -->
+            <input id="btn" type="submit" value="Submit">
         </form>
         <?php
         include './includes/connectDb.php';
@@ -175,24 +180,19 @@
     function show_NGO() {
         document.getElementById('NGO-signup').style.display = 'block';
         document.getElementById('HOTEL-signup').style.display = 'none';
-        document.getElementById('single-user-name').style.display = 'none';
         document.querySelector('#single').style.display = 'none';
-        
     }
 
     function show_hotel() {
         document.getElementById('NGO-signup').style.display = 'none';
         document.getElementById('HOTEL-signup').style.display = 'block';
-        document.getElementById('single-user-name').style.display = 'none';
         document.querySelector('#single').style.display = 'none';
     }
 
     function show() {
         document.getElementById('NGO-signup').style.display = 'none';
         document.getElementById('HOTEL-signup').style.display = 'none';
-        document.getElementById('single-user-name').style.display = 'block';
         document.querySelector('#single').style.display = 'block';
-        
     }
 </script>
 
