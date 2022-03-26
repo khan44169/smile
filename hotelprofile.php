@@ -29,23 +29,75 @@
                 </div>
             </div>
             <div id="hotel-info-and-socialmedia">
-                <h3> Information </h3>
-                <div class="row">
-                    <div class="col">
-                        <label for="Email">Email</label>
-                        <h6>Enetr email here</h6>
+                <div id="information">
+                    <div id="information-label">
+                        <h3> Information </h3>
                     </div>
-                    <div class="col">
-                        <label for="phone">Phone</label>
-                        <h6>Enetr phone here</h6>
+                
+                    <div id="email-div">
+                        <p>
+                            <h3>
+                                Email
+                            </h3>
+                            <h6>
+                                shaikhahad199@gmail.com
+                            </h6>
+                        </p>
+
+                    </div>
+                    <div id="phone-div">
+                        <p>
+                            <h3>
+                                Phone
+                            </h3>
+                            <h6>
+                                8828495484
+                            </h6>
+                        </p>
                     </div>
 
+                    <div id="smile-served-div">
+                        <p>
+                            <h3>
+                                Smile Served
+                            </h3>
+                        </p>
+                        
+                    </div>
+                    <div id="food-information">
+                        <div id="happy-faces">
+                            <p>
+                                <h3>
+                                    Happy Faces
+                                </h3>
+                                <h6>
+                                    count of happy faces
+                                </h6>
+                            </p>
+
+                        </div>
+                        <div id="food-quantity">
+                            <p>
+                                <h3>
+                                    Food Donated
+                                </h3>
+                                <h6>
+                                    Food weight in KGs
+                                </h6>
+                            </p>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <label for="smile served">Smile Served</label>
-                        <hr>
-                        1000 smile served
+                <div id="social-media">
+                    <ul>
+                        <a class="fab fa-facebook" href="#"></a>
+                        <a class="fab fa-whatsapp" href="#"></a>
+                        <a class="fab fa-instagram" href="#"></a>
+                    </ul>
+                    <div id="edit-profile">
+                        <button type="submit">Edit Profile</button>
+
                     </div>
                 </div>
             </div>
