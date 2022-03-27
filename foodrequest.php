@@ -24,7 +24,7 @@ include './includes/connectDb.php';
             // echo $food_row['raiser_id'];
             // $sql_query_info = "SELECT * FROM `email_auth` WHERE id=$food_row[raiser_id]";  //getting data from email_auth
             // $result_info = mysqli_query($conn, $sql_query_info);
-            if ($food_row['org-type'] == 'NGO') {
+            if ($food_row['org_type'] == 'NGO') {
                 $sql_query_info = "SELECT * FROM `ngo` WHERE id=$food_row[raiser_id]";
                 $result_info = mysqli_query($conn, $sql_query_info);
                 if ($result_info) {
@@ -52,7 +52,7 @@ include './includes/connectDb.php';
                 </div>';
                 }
             }
-            if ($food_row['org-type'] == 'hotel') {
+            if ($food_row['org_type'] == 'hotel') {
                 $sql_query_info = "SELECT * FROM `hotel` WHERE id=$food_row[raiser_id]";
                 $result_info = mysqli_query($conn, $sql_query_info);
                 if ($result_info) {
@@ -81,7 +81,7 @@ include './includes/connectDb.php';
                 }
             }
 
-            if ($food_row['org-type'] == 'single') {
+            if ($food_row['org_type'] == 'single') {
                 $sql_query_info = "SELECT * FROM `singleowner` WHERE id=$food_row[raiser_id]";
                 $result_info = mysqli_query($conn, $sql_query_info);
                 if ($result_info) {

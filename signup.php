@@ -17,7 +17,7 @@
         <form action='<?php echo htmlentities($_SERVER['PHP_SELF']); ?>' name="signupform" method="post">
             <div class="user" id="user" name='user'>
                 <!-- <label>You Are!!!</label></br> -->
-                  <input type="radio" id="NGO" name="user" value="NGO" onclick="show_NGO();">
+                  <input type="radio" id="NGO" name="user" value="NGO" onclick="show_NGO();" required>
                   <label for="NGO">NGO</label><br>
                   <input type="radio" id="HOTEL" name="user" value="hotel" onclick="show_hotel();">
                   <label for="HOTEL">HOTEL</label><br>
@@ -151,7 +151,7 @@
                         $auth_email = "INSERT INTO `auth_email` ( `email`, `org_type`) VALUES ('$email', '$user');";
                         $auth_result = mysqli_query($conn, $auth_email);
                         $id = mysqli_insert_id($conn);
-                        echo $id;
+                        // echo $id;
 
                         if ($auth_result) {
                             $single_reg = "INSERT INTO `singleowner` (`id`,`name`, `adhar`, `address`, `email`, `password`, `number`) VALUES ('$id','$single', '', '$address', '$email', '$pass', '$phone')";
@@ -177,6 +177,7 @@
         document.getElementById('NGO-signup').style.display = 'block';
         document.getElementById('HOTEL-signup').style.display = 'none';
         document.querySelector('#single').style.display = 'none';
+
     }
 
     function show_hotel() {

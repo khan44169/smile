@@ -25,7 +25,7 @@
                 <li><a href="foodrequest.php">SmileRequest</a></li>
                 <li><a href="Login.php">login</a></li>
                 <li><a href="signup.php">Signin</a></li>
-                <li><a href="hotelprofile.php">Profile</a></li>
+                <!-- <li><a href="hotelprofile.php">Profile</a></li> -->
                 <li><a href="Logout.php"> Logout</a></li>
             </ul>
         </div>

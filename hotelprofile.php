@@ -55,6 +55,7 @@ include './includes/connectDb.php';
 
                                 echo $_SESSION['ngo_login']['ngo_address'];
                             }
+                            
                             ?>
                         </h3>
 
@@ -62,7 +63,6 @@ include './includes/connectDb.php';
                 </div>
             </div>
             <div id="hotel-info-and-socialmedia">
-<<<<<<< HEAD
                 <div id="information">
                     <div id="information-label">
                         <h3> Information </h3>
@@ -88,12 +88,8 @@ include './includes/connectDb.php';
                                 8828495484
                             </h6>
                         </p>
-=======
-                <h3> Information </h3>
-                <div class="row">
-                    <div class="col">
-                        <label for="Email">Email</label>
-                        <h6>
+
+              
                             <?php
                             if (isset($_SESSION['single_login'])) {
 
@@ -124,7 +120,7 @@ include './includes/connectDb.php';
                             }
                             ?>
                         </h6>
->>>>>>> feb8013e1daa6352ddf3ca01e0176086b7d6c456
+
                     </div>
 
                     <div id="smile-served-div">
@@ -167,7 +163,7 @@ include './includes/connectDb.php';
                         <a class="fab fa-instagram" href="#"></a>
                     </ul>
                     <div id="edit-profile">
-                        <button type="submit">Edit Profile</button>
+                        <input type="submit" id="edit_btn" value="Edit Button">
 
                     </div>
                 </div>
