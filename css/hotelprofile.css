@@ -26,10 +26,10 @@ body {
 }
 
 #page-container {
-    height: 500px;
+    height: 66.3vh;
     width: 75%;
     /* background-color: black; */
-    display: row;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -53,7 +53,7 @@ body {
 } */
 
 #hotel-info-and-socialmedia {
-    width: 70%;
+    width: 50%;
     background-color: white;
     /* float: inline-end; */
     padding: 20px;
@@ -63,22 +63,14 @@ body {
     align-items: center; */
 }
 
-.row {
-    display: flex;
-    flex-direction: row;
-}
-
-.col {
-    width: 50%;
-}
-
 label {
-    margin-bottom: 20px;
-    padding-bottom: 5px !important;
+    margin-bottom: 2.65vh;
+    padding-bottom: 0.66vh !important;
     font-weight: 600;
 }
 
-h6 {
+
+/* h6 {
     font-weight: 400;
     font-size: 14px;
     color: #919aa3 !important
@@ -88,12 +80,12 @@ h3 {
     margin-bottom: 20px;
     padding-bottom: 5px !important;
     border-bottom: 1px solid #e0e0e0;
-}
+} */
 
 #profile-picture-container {
-    float: inline-start;
+    /* float: inline-start; */
     height: 100%;
-    width: 30%;
+    width: 50%;
     object-fit: cover;
     /* background-color: blue; */
 }
@@ -117,15 +109,15 @@ h3 {
 }
 
 img {
-    height: 50%;
-    width: 75%;
-    border-radius: 15px;
+    height: 75%;
+    width: 55%;
+    border-radius: 1.98vh;
     object-fit: fill;
 }
 
 #hotel-name-and-address {
-    padding-left: 20px;
-    padding-top: 15px;
+    padding-left: 1.30vw;
+    padding-top: 1.98vh;
     height: 30%;
     color: white;
     /* position: absolute; */
@@ -135,6 +127,160 @@ img {
 
 p {
     /* position: absolute; */
-    font-size: 25px;
+    font-size: 1.62vw;
     color: white;
+}
+
+#information {
+    display: flex;
+    flex-direction: column;
+}
+
+#information-label {
+    margin-bottom: 2.65vh;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px !important;
+}
+
+#email-div {
+    margin-bottom: 2.65vh;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px !important;
+}
+
+#phone-div {
+    margin-bottom: 2.65vh;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px !important;
+}
+
+#smile-served-div {
+    margin-bottom: 2.65vh;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px !important;
+    display: flex;
+    flex-direction: column;
+}
+
+h6 {
+    color: #919aa3 !important;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+#food-information {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 2.65vh;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px !important;
+}
+
+#happy-faces {
+    width: 50%;
+}
+
+#food-quantity {
+    width: 50%;
+}
+
+.fa-facebook {
+    color: blue;
+}
+
+.fa-whatsapp {
+    color: green;
+}
+
+.fa-instagram {
+    color: #bc2a8d;
+}
+
+a {
+    text-decoration: none;
+    font-size: 2.27vw;
+    letter-spacing: 10px;
+}
+
+ul {
+    display: inline-block;
+}
+
+button {
+    display: block;
+    float: right;
+    height: 6.63vh;
+    width: 9.76vw;
+    background-color: #3f5f80;
+    color: white;
+    font-size: 18px;
+}
+
+button:hover {
+    border: 2px solid #3f5f80;
+    background-color: white;
+    color: #3f5f80;
+    height: 7.5vh;
+    width: 10.5vw;
+    /* box-shadow: 100px, 50px, rgba(209, 29, 29, 0.6); */
+    transition: 1s;
+}
+
+@media only screen and (max-width: 780px) {
+    #food-information {
+        flex-direction: column;
+        /* overflow: scroll; */
+    }
+}
+
+
+/* @media only screen and (max-width: 661px) {
+    #hotel-info-and-socialmedia {
+        padding: 0;
+        padding-left: 10px;
+        padding-top: 20px;
+    }
+} */
+
+@media only screen and (max-width:420px) {
+    #page-container {
+        width: 100%;
+        height: 100%;
+        /* flex-direction: ; */
+    }
+}
+
+@media only screen and (max-width:420px) {
+    #profile-container {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width:420px) {
+    #profile-picture-container {
+        height: 30%;
+        width: 100%;
+        padding-top: 15px;
+        /* padding: 15px; */
+    }
+}
+
+@media only screen and (max-width:420px) {
+    #hotel-info-and-socialmedia {
+        padding: 0;
+        padding-top: 15px;
+        padding-left: 15px;
+        height: 70%;
+        width: 100%;
+        overflow: scroll;
+    }
+}
+
+@media only screen and (max-width:420px) {
+    body {
+        height: 100%;
+        width: 100%;
+        overflow: scroll;
+    }
 }
