@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2022 at 01:40 PM
+-- Generation Time: Mar 27, 2022 at 12:52 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -56,17 +56,20 @@ INSERT INTO `auth_email` (`id`, `email`, `org_type`) VALUES
 CREATE TABLE `foodraised` (
   `id` int(100) NOT NULL,
   `food_type` varchar(10) NOT NULL,
-  `foodname` varchar(50) NOT NULL,
+  `food_name` varchar(50) NOT NULL,
   `food_weight` int(100) NOT NULL,
-  `raiser_id` int(10) NOT NULL
+  `raiser_id` int(10) NOT NULL,
+  `org-type` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `foodraised`
 --
 
-INSERT INTO `foodraised` (`id`, `food_type`, `foodname`, `food_weight`, `raiser_id`) VALUES
-(1, 'nonveg', '', 20, 2);
+INSERT INTO `foodraised` (`id`, `food_type`, `food_name`, `food_weight`, `raiser_id`, `org-type`) VALUES
+(4, 'veg', 'abc', 18, 6, 'single'),
+(7, 'veg', 'aa', 1, 2, 'hotel'),
+(8, 'non_veg', 'biryani', 12, 5, 'NGO');
 
 -- --------------------------------------------------------
 
@@ -130,7 +133,6 @@ CREATE TABLE `ngo` (
 --
 
 INSERT INTO `ngo` (`id`, `ngo_name`, `ngo_registeration`, `ngo_address`, `ngo_email`, `ngo_password`, `ngo_number`, `ngo_photo`) VALUES
-(0, 'aa', 0, 'SHASTRI NAGAR', 'khan44169@gmail.co', 'aa', 9619, ''),
 (2, 'abcd', 0, 'SHASTRI NAGAR', 'khan44169@gmail.com', 'abc', 2147483647, ''),
 (5, 'aa', 55, 'SHASTRI NAGAR', 'khan44169', 'aa', 96, ''),
 (1, 'sdfsd', 6546665, '4984sdjbfkjsjdhbbjhbdb', 'sdkbskdfjka', '69698', 98646, ''),
@@ -158,12 +160,8 @@ CREATE TABLE `singleowner` (
 --
 
 INSERT INTO `singleowner` (`id`, `name`, `adhar`, `address`, `email`, `password`, `number`, `photo`) VALUES
-(3, '', 0, '', '', '', 0, ''),
 (7, 'aa', 0, 'aaa', 'khan44', 'aa', 96, ''),
-(2, 'aaa', 516651, 'adsddfsd', 'aaaa', 'aa', 961, ''),
-(6, 'aaa', 0, 'SHASTRI NAGAR', 'khan44169@gmail.', 'aa', 9619, ''),
-(1, 'ggg', 0, 'gfjggfjhfhfghjsf', 'dfghdf', 'fhdfgdf', 1641616, ''),
-(2, 'ksdja', 0, 'SHASTRI NAGAR', 'khan44169@gmail.com', 'd', 2147483647, '');
+(6, 'aaa', 0, 'SHASTRI NAGAR', 'khan44169@gmail.', 'aa', 9619, '');
 
 --
 -- Indexes for dumped tables
@@ -223,7 +221,7 @@ ALTER TABLE `auth_email`
 -- AUTO_INCREMENT for table `foodraised`
 --
 ALTER TABLE `foodraised`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `foodreciever`
@@ -234,12 +232,6 @@ ALTER TABLE `foodreciever`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `foodraised`
---
-ALTER TABLE `foodraised`
-  ADD CONSTRAINT `raisers_forign_key` FOREIGN KEY (`raiser_id`) REFERENCES `auth_email` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `foodreciever`
