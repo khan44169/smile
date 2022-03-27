@@ -1,4 +1,5 @@
 <?php
+include './includes/connectDb.php';
 
 if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_SESSION['single_login'])) {
 } else {
@@ -21,29 +22,14 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
 <body>
   <?php include './nav.php'; ?>
   <div id="triangle"></div>
-  <?php
-
-  if (isset($_SESSION['single_login'])) {
-    // echo "My Name is " . $_SESSION['single_login']['name'];
-    // echo "<br>User";
-  } else 
-  if (isset($_SESSION['hotel_login'])) {
-    // echo "My Name is " . $_SESSION['hotel_login']['hotel_name'];
-    // echo "<br>Hotel Staff";
-  } else 
-  if (isset($_SESSION['ngo_login'])) {
-    // echo "My Name is " . $_SESSION['ngo_login']['ngo_name'];
-    // echo "<br>Ngo Staff";
-  }
-
-  ?>
+ 
   <div id="ihavefood">
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
       <button class=" btn-hover" name="ihavefoodbtn">I have Food</button>
 
     </form>
     <?php
-    include './includes/connectDb.php';
+    // include './includes/connectDb.php';
     if (isset($_POST['ihavefoodbtn'])) {
       if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_SESSION['single_login'])) {
         header("location:food.php");

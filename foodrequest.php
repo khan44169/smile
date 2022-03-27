@@ -16,12 +16,12 @@ include './includes/connectDb.php';
     <?php include './nav.php'; ?>
     <div id="triangle"></div>
     <?php
-    include './includes/connectDb.php';
+    // include './includes/connectDb.php';
     $sql_query = "SELECT * FROM `foodraised`";
     $result = mysqli_query($conn, $sql_query);
     if ($result) {
         while ($food_row = mysqli_fetch_assoc($result)) {
-            echo $food_row['raiser_id'];
+            // echo $food_row['raiser_id'];
             // $sql_query_info = "SELECT * FROM `email_auth` WHERE id=$food_row[raiser_id]";  //getting data from email_auth
             // $result_info = mysqli_query($conn, $sql_query_info);
             if ($food_row['org-type'] == 'NGO') {
