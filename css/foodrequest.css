@@ -1,19 +1,9 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-<<<<<<< HEAD
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    /* height: 100vh; */
-    display: flex;
-    flex-direction: column;
-    background-color: #d9dcdc;
-=======
   /* margin-top: 20px; */
   position: absolute;
   justify-content: center;
@@ -23,7 +13,6 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #d9dcdc;
->>>>>>> feb8013e1daa6352ddf3ca01e0176086b7d6c456
 }
 
 #triangle {
@@ -37,21 +26,21 @@ body {
 }
 
 .request-div {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    width: 75%;
-    /* max-height: 20vh; */
-    background-color: white;
-    border-radius: 7px;
-    margin: 1.5vh;
-    align-items: center;
-    /* justify-content: space-between; */
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  /* max-height: 20vh; */
+  background-color: white;
+  border-radius: 7px;
+  margin: 1.5vh;
+  align-items: center;
+  /* justify-content: space-between; */
 }
 
 .request-div:hover {
-    box-shadow: 100px, 150px, 7px, rgb(118, 195, 247);
-    transition: 5s;
+  box-shadow: 100px, 150px, 7px, rgb(118, 195, 247);
+  transition: 5s;
 }
 
 .description {
@@ -74,31 +63,31 @@ body {
 
 #contact,
 #food-detail {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .acceptbtn-div {
-    width: 30%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #accept-btn {
-    border-radius: 7px;
-    background-color: #031d66;
-    color: rgb(255, 254, 254);
-    padding: 3%;
-    margin: 1%;
-    /* font-size: larger; */
+  border-radius: 7px;
+  background-color: #031d66;
+  color: rgb(255, 254, 254);
+  padding: 3%;
+  margin: 1%;
+  /* font-size: larger; */
 }
 
 #accept-btn:hover {
-    background: white;
-    color: green;
-    /* border-radius: 10px; */
+  background: white;
+  color: green;
+  /* border-radius: 10px; */
 }
