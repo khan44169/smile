@@ -48,16 +48,84 @@ body {
 
 #food-type,
 #btn-section {
-    margin: 0;
-    padding: 15px;
-    /* border: 2px solid blue; /*testing purpose*/
-    width: 100%;
-    display: flex;
+    /* display: inline-flex; */
+    background: #fff;
+    /* height: 100px;
+    width: 400px; */
+    align-items: center;
     justify-content: center;
+    /* border-radius: 5px; */
+    padding: 20px 15px;
+    /* box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2); */
+    display: flex;
 }
 
-#food-type label {
-    margin: 5px;
+#food-type .option {
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 10px;
+    /* border-radius: 5px; */
+    cursor: pointer;
+    padding: 0 10px;
+    /* border: 2px solid lightgrey; */
+    transition: all 0.3s ease;
+}
+
+#food-type .option .dot {
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+}
+
+#food-type .option .dot::before {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background: #0069d9;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#non_veg:checked:checked~.non_veg,
+#veg:checked:checked~.veg {
+    border-color: #0069d9;
+    background: #0069d9;
+}
+
+#non_veg:checked:checked~.non_veg .dot,
+#veg:checked:checked~.veg .dot {
+    background: #fff;
+}
+
+#non_veg:checked:checked~.non_veg .dot::before,
+#veg:checked:checked~.veg .dot::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#food-type .option span {
+    font-size: 20px;
+    color: #808080;
+}
+
+#non_veg:checked:checked~.non_veg span,
+#veg:checked:checked~.veg span {
+    color: #fff;
 }
 
 #note {

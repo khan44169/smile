@@ -59,6 +59,21 @@ body {
     font-size: 1.5em;
     width: 100%;
     /* border: 2px solid red; */
+    width: 70%;
+    /* height: 100%; */
+    text-decoration: none;
+    overflow: hidden;
+    padding-left: 2vw;
+    padding-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid blue; */
+}
+
+#hotel {
+    font-size: 1.5em;
+    width: 100%;
+    /* border: 2px solid red; */
 }
 
 #contact,

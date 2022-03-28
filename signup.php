@@ -17,64 +17,75 @@
         <form action='<?php echo htmlentities($_SERVER['PHP_SELF']); ?>' name="signupform" method="post">
             <div class="user" id="user" name='user'>
                 <!-- <label>You Are!!!</label></br> -->
-                  <input type="radio" id="NGO" name="user" value="NGO" onclick="show_NGO();" required>
-                  <label for="NGO">NGO</label><br>
-                  <input type="radio" id="HOTEL" name="user" value="hotel" onclick="show_hotel();">
-                  <label for="HOTEL">HOTEL</label><br>
-                  <input type="radio" id="SINGLE" name="user" value="single" onclick="show();">
-                  <label for="SINGLE">SINGLE OWNER</label>
+                <input type="radio" name="user" value="ngo" id="NGO" checked onclick="show_NGO();">
+                <input type="radio" name="user" value="hotel" id="HOTEL" onclick="show_hotel();">
+                <input type="radio" name="user" value="single" id="SINGLE" onclick="show();" checked>
+                <label for="NGO" class="option NGO">
+                    <div class="dot"></div>
+                    <span>NGO</span>
+                </label>
+                <label for="HOTEL" class="option HOTEL">
+                    <div class="dot"></div>
+                    <span>Hotel</span>
+                </label>
+                <label for="SINGLE" class="option SINGLE">
+                    <div class="dot"></div>
+                    <span>Single Owner</span>
+                </label>
             </div>
             <div id="NGO-signup" class="hide">
                 <div class="user-box">
-                    <input type="text" id="" name="ngo_name">
+                    <input type="text" id="NGO_name" name="ngo_name">
                     <label>NGO Name</label>
                 </div>
                 <div class="user-box">
-                    <input type="text" id="" name="r_num">
+                    <input type="text" id="NGO_r_num" name="r_num">
                     <label>Registeration Number</label>
                 </div>
             </div>
             <div id="HOTEL-signup" class="hide">
                 <div class="user-box">
-                    <input type="text" id="" name="hotel_name">
+                    <input type="text" id="hotel_name" name="hotel_name">
                     <label>Hotel Name</label>
                 </div>
                 <div class="user-box">
-                    <input type="text" id="" name="hotel_l_num">
+                    <input type="text" id="hotel_l_num" name="hotel_l_num">
                     <label>License Number</label>
                 </div>
             </div>
             <div id="single">
                 <div class="user-box">
-                    <input type="text" id="" name="single">
+                    <input type="text" id="single_UN" name="single" required>
                     <label>Name</label>
                 </div>
 
             </div>
             <div class="user-box">
-                <input type="text" id="" name="email" required>
+                <input type="text" id="email" name="email" required>
                 <label>E-mail</label>
             </div>
             <div class="user-box">
-                <input type="number" id="" name="phone" required>
+                <input type="number" id="phone" name="phone" required>
                 <label>Phone</label>
             </div>
             <div class="user-box">
-                <input type="password" id="" name="pass" required>
+                <input type="password" id="pass" name="pass" required>
                 <label>Password</label>
             </div>
             <div class="user-box">
-                <input type="password" id="" name="cpass" required>
+                <input type="password" id="con_pass" name="cpass" required>
                 <label>Confirm Password</label>
             </div>
             <div class="user-box">
-                <input type="text" id="" name="address" required>
+                <input type="text" id="address" name="address" required>
                 <label>Address</label>
             </div>
+
+            <span id="message"></span>
             <!-- <button type="submit" class="submit-button">
                 Submit
             </button> -->
-            <input id="btn" type="submit" value="Submit">
+            <input id="btn" type="submit" value="Submit" onclick="verifyPassword();">
             <a href="login.php" class="direction">Already Registered -> Go to Login.</a>
         </form>
         <?php
@@ -177,6 +188,11 @@
         document.getElementById('NGO-signup').style.display = 'block';
         document.getElementById('HOTEL-signup').style.display = 'none';
         document.querySelector('#single').style.display = 'none';
+        document.getElementById('NGO_name').required = true;
+        document.getElementById('NGO_r_num').required = true;
+        document.getElementById('hotel_name').required = false;
+        document.getElementById('hotel_l_num').required = false;
+        document.getElementById('single_UN').required = false;
 
     }
 
@@ -184,13 +200,58 @@
         document.getElementById('NGO-signup').style.display = 'none';
         document.getElementById('HOTEL-signup').style.display = 'block';
         document.querySelector('#single').style.display = 'none';
+        document.getElementById('NGO_name').required = false;
+        document.getElementById('NGO_r_num').required = false;
+        document.getElementById('hotel_name').required = true;
+        document.getElementById('hotel_l_num').required = true;
+        document.getElementById('single_UN').required = false;
+          
     }
 
     function show() {
         document.getElementById('NGO-signup').style.display = 'none';
         document.getElementById('HOTEL-signup').style.display = 'none';
         document.querySelector('#single').style.display = 'block';
+        document.getElementById('NGO_name').required = false;
+        document.getElementById('NGO_r_num').required = true;
+        document.getElementById('hotel_name').required = false;
+        document.getElementById('hotel_l_num').required = false;
+        document.getElementById('single_UN').required = true;
     }
+
+    var NGO_name = getElementById('NGO_name');
+    var NGO_r_num = getElementById('NGO_r_num');
+    var hotel_name = getElementById('hotel_name');
+    var hotel_l_num = getElementById('hotel_l_num');
+    var single_un = getElementById('single_UN');
+    var email = getElementById('email');
+    var phone = getElementById('phone');
+    var pass = getElementById('pass');
+    var con_pass = getElementById('con_pass');
+    var address = getElementById('address');
+
+    function verifyPassword() {  
+  var pass = document.getElementById("pass").value;  
+  //check empty password field  
+  if(pass == "") {  
+     document.getElementById("message").set = "**Fill the password please!";  
+     return false;  
+  }  
+   
+ //minimum password length validation  
+  if(pass.length < 8) {  
+     document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";  
+     return false;  
+  }  
+  
+//maximum length of password validation  
+//   if(pw.length > 15) {  
+//      document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";  
+//      return false;  
+//   } else {  
+//      alert("Password is correct");  
+//   }  
+}  
 </script>
 
 </html>
