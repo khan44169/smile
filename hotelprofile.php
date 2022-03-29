@@ -17,7 +17,6 @@ include './includes/connectDb.php';
 <body>
     <?php include './nav.php'; ?>
     <div id="triangle"></div>
-
     <div id="page-container">
         <div id="profile-container">
             <div id="profile-picture-container">
@@ -62,33 +61,6 @@ include './includes/connectDb.php';
                 </div>
             </div>
             <div id="hotel-info-and-socialmedia">
-<<<<<<< HEAD
-                <div id="information">
-                    <div id="information-label">
-                        <h3> Information </h3>
-                    </div>
-                
-                    <div id="email-div">
-                        <p>
-                            <h3>
-                                Email
-                            </h3>
-                            <h6>
-                                shaikhahad199@gmail.com
-                            </h6>
-                        </p>
-
-                    </div>
-                    <div id="phone-div">
-                        <p>
-                            <h3>
-                                Phone
-                            </h3>
-                            <h6>
-                                8828495484
-                            </h6>
-                        </p>
-=======
                 <h3> Information </h3>
                 <div class="row">
                     <div class="col">
@@ -124,37 +96,36 @@ include './includes/connectDb.php';
                             }
                             ?>
                         </h6>
->>>>>>> feb8013e1daa6352ddf3ca01e0176086b7d6c456
                     </div>
 
                     <div id="smile-served-div">
                         <p>
-                            <h3>
-                                Smile Served
-                            </h3>
+                        <h3>
+                            Smile Served
+                        </h3>
                         </p>
-                        
+
                     </div>
                     <div id="food-information">
                         <div id="happy-faces">
                             <p>
-                                <h3>
-                                    Happy Faces
-                                </h3>
-                                <h6>
-                                    count of happy faces
-                                </h6>
+                            <h3>
+                                Happy Faces
+                            </h3>
+                            <h6>
+                                count of happy faces
+                            </h6>
                             </p>
 
                         </div>
                         <div id="food-quantity">
                             <p>
-                                <h3>
-                                    Food Donated
-                                </h3>
-                                <h6>
-                                    Food weight in KGs
-                                </h6>
+                            <h3>
+                                Food Donated
+                            </h3>
+                            <h6>
+                                Food weight in KGs
+                            </h6>
                             </p>
 
                         </div>

@@ -22,10 +22,10 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
 <body>
   <?php include './nav.php'; ?>
   <div id="triangle"></div>
- 
+
   <div id="ihavefood">
     <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-      <button class=" btn-hover" name="ihavefoodbtn">I have Food</button>
+      <button class=" btn-hover" name="ihavefoodbtn">RaiseSmile</button>
 
     </form>
     <?php
