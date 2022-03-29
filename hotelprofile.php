@@ -54,6 +54,7 @@ include './includes/connectDb.php';
 
                                 echo $_SESSION['ngo_login']['ngo_address'];
                             }
+
                             ?>
                         </h3>
 
@@ -61,23 +62,45 @@ include './includes/connectDb.php';
                 </div>
             </div>
             <div id="hotel-info-and-socialmedia">
-                <h3> Information </h3>
-                <div class="row">
-                    <div class="col">
-                        <label for="Email">Email</label>
+                <div id="information">
+                    <div id="information-label">
+                        <h3> Information </h3>
+                    </div>
+
+                    <div id="email-div">
+                        <p>
+                        <h3>
+                            Email
+                        </h3>
                         <h6>
-                            <?php
-                            if (isset($_SESSION['single_login'])) {
+                            shaikhahad199@gmail.com
+                        </h6>
+                        </p>
 
-                                echo $_SESSION['single_login']['email'];
-                            } else if (isset($_SESSION['hotel_login'])) {
+                    </div>
+                    <div id="phone-div">
+                        <p>
+                        <h3>
+                            Phone
+                        </h3>
+                        <h6>
+                            8828495484
+                        </h6>
+                        </p>
 
-                                echo $_SESSION['hotel_login']['hotel_email'];
-                            } else if (isset($_SESSION['ngo_login'])) {
 
-                                echo $_SESSION['ngo_login']['ngo_email'];
-                            }
-                            ?>
+                        <?php
+                        if (isset($_SESSION['single_login'])) {
+
+                            echo $_SESSION['single_login']['email'];
+                        } else if (isset($_SESSION['hotel_login'])) {
+
+                            echo $_SESSION['hotel_login']['hotel_email'];
+                        } else if (isset($_SESSION['ngo_login'])) {
+
+                            echo $_SESSION['ngo_login']['ngo_email'];
+                        }
+                        ?>
                         </h6>
                     </div>
                     <div class="col">
@@ -138,7 +161,7 @@ include './includes/connectDb.php';
                         <a class="fab fa-instagram" href="#"></a>
                     </ul>
                     <div id="edit-profile">
-                        <button type="submit">Edit Profile</button>
+                        <input type="submit" id="edit_btn" value="Edit Button">
 
                     </div>
                 </div>

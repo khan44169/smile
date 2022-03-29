@@ -109,93 +109,10 @@ label {
     font-size: 16px;
 }
 
-.user {
-    display: flex;
-    background: #fff;
-    /* height: 100px;
-    width: 400px; */
-    align-items: center;
-    justify-content: center;
-    /* border-radius: 5px; */
-    padding: 20px 15px;
-    /* box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2); */
-}
 
-.user .option {
-    background: #fff;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 0 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    /* padding: 0 10px; */
-    /* border: 2px solid lightgrey; */
-    transition: all 0.3s ease;
-}
-
-.user .option .dot {
-    height: 20px;
-    width: 20px;
-    background: #d9d9d9;
-    border-radius: 50%;
-    position: relative;
-}
-
-.user .option .dot::before {
-    position: absolute;
-    content: "";
-    top: 4px;
-    left: 4px;
-    width: 12px;
-    height: 12px;
-    background: #0069d9;
-    border-radius: 50%;
-    opacity: 0;
-    transform: scale(1.5);
-    transition: all 0.3s ease;
-}
-
-input[type="radio"] {
+/* .hide {
     display: none;
-}
-
-#NGO:checked:checked~.NGO,
-#HOTEL:checked:checked~.HOTEL,
-#SINGLE:checked:checked~.SINGLE {
-    border-color: #0069d9;
-    background: #0069d9;
-}
-
-#NGO:checked:checked~.NGO .dot,
-#HOTEL:checked:checked~.HOTEL .dot,
-#SINGLE:checked:checked~.SINGLE .dot {
-    background: #fff;
-}
-
-#NGO:checked:checked~.NGO .dot::before,
-#HOTEL:checked:checked~.HOTEL .dot::before,
-#SINGLE:checked:checked~.SINGLE .dot::before {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.user .option span {
-    font-size: 20px;
-    color: #808080;
-}
-
-#NGO:checked:checked~.NGO span,
-#HOTEL:checked:checked~.HOTEL span,
-#SINGLE:checked:checked~.SINGLE span {
-    color: #fff;
-}
-
-.hide {
-    display: none;
-}
+} */
 
 #NGO-signup {
     animation-name: appear-NGO-signup;
