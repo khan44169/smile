@@ -84,11 +84,17 @@ body {
 #user {
     display: flex;
     color: #000;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
   }
 
   #user label{
-      padding-right: 10px;
-      font-size: 14px;
+    padding-right: 10px;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    height: 18px;
   }
 
 #btn{

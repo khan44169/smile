@@ -80,11 +80,14 @@
                 <input type="text" id="address" name="address" required>
                 <label>Address</label>
             </div>
+            <div class="user-box">
+                <label for="image">Photo:</label>
+                <input type="file" id="image" name="image" required>
+                <!-- <label>Photo :</label> -->
+            </div>
 
-            <span id="message"></span>
-            <!-- <button type="submit" class="submit-button">
-                Submit
-            </button> -->
+            <!-- <span id="message"></span> -->
+
             <input id="btn" type="submit" value="Submit" onclick="verifyPassword();">
             <a href="login.php" class="direction">Already Registered -> Go to Login.</a>
         </form>
@@ -101,6 +104,7 @@
             $cpass = $_POST['cpass'];
             $phone = $_POST['phone'];
             $address = $_POST['address'];
+            $photo = $_POST['image'];
 
             //check wheather email already exist or not
             $email_exist = "SELECT * FROM auth_email WHERE email='$email'";
@@ -132,7 +136,7 @@
                         $id = mysqli_insert_id($conn);
                         echo $id;
                         if ($auth_result) {
-                            $NGO_reg = "INSERT INTO `ngo` (`id`,`ngo_name`, `ngo_registeration`, `ngo_address`, `ngo_email`, `ngo_password`, `ngo_number`) VALUES ('$id','$NGO_name', '$r_num', '$address', '$email', '$pass', '$phone')";
+                            $NGO_reg = "INSERT INTO `ngo` (`id`,`ngo_name`, `ngo_registeration`, `ngo_address`, `ngo_email`, `ngo_password`, `ngo_number`, `ngo_photo`) VALUES ('$id','$NGO_name', '$r_num', '$address', '$email', '$pass', '$phone','$photo')";
                             $result = mysqli_query($conn, $NGO_reg);
                         } else {
                             echo "bhai kya kar raha hai tu";
@@ -149,7 +153,7 @@
                         echo $id;
 
                         if ($auth_result) {
-                            $hotel_reg = "INSERT INTO `hotel` ( `id`,`hotel_name`, `hotel_license`, `hotel_address`, `hotel_email`, `hotel_password`, `hotel_number`) VALUES ('$id','$hotel_name', '$hotel_l_num', '$address', '$email', '$pass', '$phone');";
+                            $hotel_reg = "INSERT INTO `hotel` ( `id`,`hotel_name`, `hotel_license`, `hotel_address`, `hotel_email`, `hotel_password`, `hotel_number`,`hotel_photo`) VALUES ('$id','$hotel_name', '$hotel_l_num', '$address', '$email', '$pass', '$phone','$photo');";
                             $result = mysqli_query($conn, $hotel_reg);
                         } else {
                             echo "bhai kya kar raha hai tu";
@@ -165,7 +169,7 @@
                         // echo $id;
 
                         if ($auth_result) {
-                            $single_reg = "INSERT INTO `singleowner` (`id`,`name`, `adhar`, `address`, `email`, `password`, `number`) VALUES ('$id','$single', '', '$address', '$email', '$pass', '$phone')";
+                            $single_reg = "INSERT INTO `singleowner` (`id`,`name`, `adhar`, `address`, `email`, `password`, `number`,`photo`) VALUES ('$id','$single', '', '$address', '$email', '$pass', '$phone','$photo')";
                             $result = mysqli_query($conn, $single_reg);
                         } else {
                             echo "bhai kya kar raha hai tu";
@@ -205,7 +209,7 @@
         document.getElementById('hotel_name').required = true;
         document.getElementById('hotel_l_num').required = true;
         document.getElementById('single_UN').required = false;
-          
+
     }
 
     function show() {
@@ -230,28 +234,28 @@
     var con_pass = getElementById('con_pass');
     var address = getElementById('address');
 
-    function verifyPassword() {  
-  var pass = document.getElementById("pass").value;  
-  //check empty password field  
-  if(pass == "") {  
-     document.getElementById("message").set = "**Fill the password please!";  
-     return false;  
-  }  
-   
- //minimum password length validation  
-  if(pass.length < 8) {  
-     document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";  
-     return false;  
-  }  
-  
-//maximum length of password validation  
-//   if(pw.length > 15) {  
-//      document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";  
-//      return false;  
-//   } else {  
-//      alert("Password is correct");  
-//   }  
-}  
+    function verifyPassword() {
+        var pass = document.getElementById("pass").value;
+        //check empty password field  
+        if (pass == "") {
+            document.getElementById("message").set = "**Fill the password please!";
+            return false;
+        }
+
+        //minimum password length validation  
+        if (pass.length < 8) {
+            document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";
+            return false;
+        }
+
+        //maximum length of password validation  
+        //   if(pw.length > 15) {  
+        //      document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";  
+        //      return false;  
+        //   } else {  
+        //      alert("Password is correct");  
+        //   }  
+    }
 </script>
 
 </html>

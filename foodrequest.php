@@ -111,7 +111,7 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
                     </div>
                     <div id="acceptbtn-div" class="acceptbtn-div">
                     <button type="submit" id="accept-btn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal' . $food_row['id'] . '" onclick="show_Modal(' . $info_row['id'] . ', \'single\');">Accept Request</button>
-                                        </div>
+                    </div>
                 </div>';
                 }
             }

@@ -77,6 +77,12 @@ body {
     font-size: 14px;
 }
 
+#image{
+    border-bottom: none;
+    padding-left: 60px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
 .login-box form a {
     color: #000000;
     text-decoration: none;
