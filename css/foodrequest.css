@@ -106,3 +106,7 @@ body {
     color: green;
     /* border-radius: 10px; */
 }
+
+.hide{
+  display: none;
+}

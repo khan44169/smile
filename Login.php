@@ -41,7 +41,7 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
                 <label>Password</label>
             </div>
             <input type="submit" name="submit" value="Login" id="btn">
-            <a href="signup.php" class="direction">New User -> Kindly Register</a>
+            <a href="signup.php" class="direction" style="font-size: .9rem;">New User -> Kindly Register</a>
         </form>
         <?php
         if (isset($_POST['submit'])) {

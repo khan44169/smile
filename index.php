@@ -47,7 +47,7 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
           <h3>we served</h3>
         </div>
         <div id="smileserved">8500</div>
-        <div id="smiles"> 
+        <div id="smiles">
           <h4>smiles</h4>
         </div>
       </div>
