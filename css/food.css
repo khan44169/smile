@@ -48,8 +48,8 @@ body {
 
 #food-type,
 #btn-section {
-    /* display: inline-flex; */
-    background: #fff;
+    display: flex;
+    /* background: #fff; */
     /* height: 100px;
     width: 400px; */
     align-items: center;
@@ -57,20 +57,19 @@ body {
     /* border-radius: 5px; */
     padding: 20px 15px;
     /* box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2); */
-    display: flex;
 }
 
 #food-type .option {
-    background: transparent;
+    background: #fff;
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     margin: 0 10px;
-    /* border-radius: 5px; */
+    border-radius: 5px;
     cursor: pointer;
-    padding: 0 10px;
+    /* padding: 0 10px; */
     /* border: 2px solid lightgrey; */
     transition: all 0.3s ease;
 }
