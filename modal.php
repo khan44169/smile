@@ -118,7 +118,8 @@ if (isset($_POST['id'])) {
                     ?>
                 </h6>
             </div>
-            <form action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>" method="post">
+            <!-- <form action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>" method="post"> -->
+            <form action="/smile/foodrequest.php" method="post">
                 <button type="submit" name="submit" id="accept-btn" class="btn btn-primary">Accept Request</button>
                 <?php
                 if (isset($_POST['submit'])) {

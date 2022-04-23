@@ -26,10 +26,10 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
       <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post" class="form">
         <div id="food-type" class="wd100">
           <input type="radio" name="foodtype" value="non_veg" id="non_veg">
-          <input type="radio" name="foodtype" value="veg" id="veg">
+          <input type="radio" name="foodtype" value="veg" id="non_veg">
           <label for="nonveg" class="option non_veg">
             <div class="dot"></div>
-              <span>NON VEG</span>
+            <span>NON VEG</span>
           </label>
           <label for="veg" class="option veg">
             <div class="dot"></div>
