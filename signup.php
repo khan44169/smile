@@ -80,11 +80,11 @@
                 <input type="text" id="address" name="address" required>
                 <label>Address</label>
             </div>
-            <div class="user-box">
+            <!-- <div class="user-box">
                 <label for="image">Photo:</label>
-                <input type="file" id="image" name="image" required>
+                <input type="file" id="image" name="image" required> -->
                 <!-- <label>Photo :</label> -->
-            </div>
+            <!-- </div> -->
 
             <!-- <span id="message"></span> -->
 
