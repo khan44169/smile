@@ -123,11 +123,11 @@ img {
     overflow: hidden;
 }
 
-p {
-    /* position: absolute; */
+/* p {
+    position: absolute; 
     font-size: 1.62vw;
-    color: white;
-}
+    color: white; 
+} */
 
 #information {
     display: flex;
@@ -201,15 +201,15 @@ h3{
     color: #bc2a8d;
 }
 
-a {
+/* a {
     text-decoration: none;
     font-size: 2.27vw;
     letter-spacing: 10px;
-}
+} */
 
-ul {
+/* ul {
     display: inline-block;
-}
+} */
 
 #edit-profile {
     width: 100%;

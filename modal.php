@@ -1,5 +1,7 @@
 <?php
+
 if (isset($_POST['id'])) {
+    echo "hello";
     include './includes/connectDb.php';
 
     $raiserid_data = $_POST['id'];
@@ -119,29 +121,38 @@ if (isset($_POST['id'])) {
                 </h6>
             </div>
             <!-- <form action="<?php echo htmlentities($_SERVER['PHP_SELF']) ?>" method="post"> -->
-            <form action="/smile/foodrequest.php" method="post">
+            <form action="/smile/modal.php" method="post">
+                <!-- <input type="submit" value="submit"> -->
+                <input type="number" name="id" id="" value="<?php echo $raiserid ?>" style="display: none;">
                 <button type="submit" name="submit" id="accept-btn" class="btn btn-primary">Accept Request</button>
-                <?php
-                if (isset($_POST['submit'])) {
-                    // print_r($_SESSION['login']);
-                    print_r($raisedata);
-                    $raiserid = $raisedata['id'];
-                    echo $raiserid;
-                    $reciverid = $_SESSION['login']['id'];
-                    echo $reciverid;
-                    $foodweight = $raisedata['food_weight'];
-                    echo $foodweight;
-                    $foodtype = $raisedata['food_type'];
-                    echo $foodtype;
-                    $sql_query_reciver = "INSERT INTO `foodreciever` (`raiser_id`, `reciever_id`, `food_weight`, `food_type`) VALUES ('$raiserid', '$reciverid', '$foodweight', '$foodtype')";
-                    $result_reciver = mysqli_query($conn, $sql_query_reciver);
-                    if ($result_reciver) {
-                        $raiser_delete_query = "DELETE FROM `foodraised` WHERE `foodraised`.`id` = '$raiserid'";
-                        mysqli_query($conn, $raiser_delete_query);
-                    }
-                }
-                ?>
             </form>
+            <!-- </form> -->
+            <?php
+            print_r($raisedata);
+
+            print_r($_SESSION['login']);
+            if (isset($_POST['submit'])) {
+
+                print_r($raisedata);
+                $raiserid = $raisedata['id'];
+                echo $raiserid;
+                $reciverid = $_SESSION['login']['id'];
+                echo $reciverid;
+                $foodweight = $raisedata['food_weight'];
+                echo $foodweight;
+                $foodtype = $raisedata['food_type'];
+                echo $foodtype;
+                $sql_query_reciver = "INSERT INTO `foodreciever` (`raiser_id`, `reciever_id`, `food_weight`, `food_type`) VALUES ('$raiserid', '$reciverid', '$foodweight', '$foodtype')";
+                $result_reciver = mysqli_query($conn, $sql_query_reciver);
+                if ($result_reciver) {
+                    $raiser_delete_query = "DELETE FROM `foodraised` WHERE `foodraised`.`id` = '$raiserid'";
+                    mysqli_query($conn, $raiser_delete_query);
+                    header("location:foodrequest.php");
+                } else {
+                    echo "hello error";
+                }
+            } ?>
         </div>
     </div>
-<?php }
+<?php
+}

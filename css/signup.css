@@ -1,15 +1,12 @@
 html {
     height: 100%;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500;700&family=Fredoka+One&family=Righteous&family=Yeon+Sung&display=swap');
-body {
+}body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
     background-color: #d9dcdc;
     /* background: black; */
-    font-family: 'Baloo Thambi 2', cursive;
+    /* font-family: 'Baloo Thambi 2', cursive; */
 }
 
 #triangle {

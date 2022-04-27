@@ -11,13 +11,14 @@
 </head>
 
 <body>
+
     <div id="triangle"></div>
     <div class="login-box" id="signup-div">
         <h2>Register yourself...</h2>
         <form action='<?php echo htmlentities($_SERVER['PHP_SELF']); ?>' name="signupform" method="post">
             <div class="user" id="user" name='user'>
                 <!-- <label>You Are!!!</label></br> -->
-                <input type="radio" name="user" value="ngo" id="NGO" checked onclick="show_NGO();">
+                <input type="radio" name="user" value="NGO" id="NGO" onclick="show_NGO();">
                 <input type="radio" name="user" value="hotel" id="HOTEL" onclick="show_hotel();">
                 <input type="radio" name="user" value="single" id="SINGLE" onclick="show();" checked>
                 <label for="NGO" class="option NGO">
@@ -80,11 +81,11 @@
                 <input type="text" id="address" name="address" required>
                 <label>Address</label>
             </div>
-            <div class="user-box">
+            <!-- <div class="user-box">
                 <label for="image">Photo:</label>
-                <input type="file" id="image" name="image" required>
-                <!-- <label>Photo :</label> -->
-            </div>
+                <input type="file" id="image" name="image" required> -->
+            <!-- <label>Photo :</label> -->
+            <!-- </div> -->
 
             <!-- <span id="message"></span> -->
 
@@ -104,7 +105,6 @@
             $cpass = $_POST['cpass'];
             $phone = $_POST['phone'];
             $address = $_POST['address'];
-            $photo = $_POST['image'];
 
             //check wheather email already exist or not
             $email_exist = "SELECT * FROM auth_email WHERE email='$email'";
@@ -136,8 +136,14 @@
                         $id = mysqli_insert_id($conn);
                         echo $id;
                         if ($auth_result) {
-                            $NGO_reg = "INSERT INTO `ngo` (`id`,`ngo_name`, `ngo_registeration`, `ngo_address`, `ngo_email`, `ngo_password`, `ngo_number`, `ngo_photo`) VALUES ('$id','$NGO_name', '$r_num', '$address', '$email', '$pass', '$phone','$photo')";
+                            $NGO_reg = "INSERT INTO `ngo` (`id`, `ngo_name`, `ngo_registeration`, `ngo_address`, `ngo_email`, `ngo_password`, `ngo_number`) VALUES ('$id','$NGO_name', '$r_num', '$address', '$email', '$pass', '$phone')";
                             $result = mysqli_query($conn, $NGO_reg);
+                            if ($result) {
+                                header("location:login.php");
+                            } else {
+                                echo mysqli_error($conn);
+                                echo "somthing went Wrong";
+                            }
                         } else {
                             echo "bhai kya kar raha hai tu";
                         }
@@ -145,7 +151,7 @@
 
                     //for hotels registration
                     elseif ($_POST['user'] == 'hotel') {
-                        echo "success";
+                        // echo "success";
                         $user = $_POST['user'];
                         $auth_email = "INSERT INTO `auth_email` ( `email`, `org_type`) VALUES ('$email', '$user');";
                         $auth_result = mysqli_query($conn, $auth_email);
@@ -153,8 +159,15 @@
                         echo $id;
 
                         if ($auth_result) {
-                            $hotel_reg = "INSERT INTO `hotel` ( `id`,`hotel_name`, `hotel_license`, `hotel_address`, `hotel_email`, `hotel_password`, `hotel_number`,`hotel_photo`) VALUES ('$id','$hotel_name', '$hotel_l_num', '$address', '$email', '$pass', '$phone','$photo');";
+
+                            $hotel_reg = "INSERT INTO `hotel` ( `id`,`hotel_name`, `hotel_license`, `hotel_address`, `hotel_email`, `hotel_password`, `hotel_number`) VALUES ('$id','$hotel_name', '$hotel_l_num', '$address', '$email', '$pass', '$phone');";
                             $result = mysqli_query($conn, $hotel_reg);
+                            if ($result) {
+                                echo "success";
+                                header("location:login.php");
+                            } else {
+                                echo "somthing went wrong";
+                            }
                         } else {
                             echo "bhai kya kar raha hai tu";
                         }
@@ -169,8 +182,15 @@
                         // echo $id;
 
                         if ($auth_result) {
-                            $single_reg = "INSERT INTO `singleowner` (`id`,`name`, `adhar`, `address`, `email`, `password`, `number`,`photo`) VALUES ('$id','$single', '', '$address', '$email', '$pass', '$phone','$photo')";
+                            echo $id;
+                            $single_reg = "INSERT INTO `singleowner` (`id`,`name`, `adhar`, `address`, `email`, `password`, `number`) VALUES ('$id','$single', '00', '$address', '$email', '$pass', '$phone')";
                             $result = mysqli_query($conn, $single_reg);
+                            if ($result) {
+                                echo "success";
+                                header("location:login.php");
+                            } else {
+                                echo mysqli_error($conn);
+                            }
                         } else {
                             echo "bhai kya kar raha hai tu";
                         }

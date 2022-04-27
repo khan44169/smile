@@ -22,38 +22,52 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
 <body>
   <?php include './nav.php'; ?>
   <div id="triangle"></div>
+  <?php
 
-  <div id="ihavefood">
-    <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-      <button class=" btn-hover" name="ihavefoodbtn">I have Food</button>
+  if (isset($_SESSION['hotel_login']) || isset($_SESSION['single_login'])) {
 
-    </form>
-    <?php
+  ?>
+    <div id="ihavefood">
+      <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+        <button class=" btn-hover" name="ihavefoodbtn">I have Food</button>
+
+      </form>
+    <?php } else { ?>
+
+      <div id="ihavefood">
+        <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+          <button class=" btn-hover" name="iwantfoodbtn">I Want Food</button>
+
+        </form>
+
+      <?php
+    }
     // include './includes/connectDb.php';
     if (isset($_POST['ihavefoodbtn'])) {
-      if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_SESSION['single_login'])) {
+      if (isset($_SESSION['hotel_login']) || isset($_SESSION['single_login'])) {
         header("location:food.php");
-      } else {
-        header("location:Login.php");
       }
     }
-    ?>
+    if (isset($_POST['iwantfoodbtn'])) {
+      header("location:foodrequest.php");
+    }
+      ?>
 
-  </div>
-  <div id="footer">
-    <div id="foodraised">
-      <div id="smileserved-container">
-        <div id="weserved">
-          <h3>we served</h3>
-        </div>
-        <div id="smileserved">8500</div>
-        <div id="smiles">
-          <h4>smiles</h4>
-        </div>
       </div>
-    </div>
-    <div id="aboutus"></div>
-  </div>
+      <div id="footer">
+        <div id="foodraised">
+          <div id="smileserved-container">
+            <div id="weserved">
+              <h3>we served</h3>
+            </div>
+            <div id="smileserved">8500</div>
+            <div id="smiles">
+              <h4>smiles</h4>
+            </div>
+          </div>
+        </div>
+        <div id="aboutus"></div>
+      </div>
 
 </body>
 

@@ -158,6 +158,6 @@ if (isset($_SESSION['ngo_login']) || isset($_SESSION['hotel_login']) || isset($_
         })
     }
 </script>
+<?php include './modal.php' ?>
 
 </html>
-<?php include './modal.php' ?>

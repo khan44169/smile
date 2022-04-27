@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2022 at 12:52 PM
+-- Generation Time: Apr 27, 2022 at 10:48 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -39,13 +39,10 @@ CREATE TABLE `auth_email` (
 --
 
 INSERT INTO `auth_email` (`id`, `email`, `org_type`) VALUES
-(1, 'kjkhbjkb', 'ngo'),
-(2, 'khan44169@gmail.com', 'hotel'),
-(3, '', 'single'),
-(4, 'khan44169@gmail.co', 'NGO'),
-(5, 'khan44169', 'NGO'),
-(6, 'khan44169@gmail.', 'single'),
-(7, 'khan44', 'single');
+(33, 'khan44169@gmail.com', 'NGO'),
+(34, 'xyz@gmail.com', 'hotel'),
+(35, 'hij@gmail.com', 'single'),
+(36, 'cdf@gmail.com', 'NGO');
 
 -- --------------------------------------------------------
 
@@ -62,15 +59,6 @@ CREATE TABLE `foodraised` (
   `org-type` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `foodraised`
---
-
-INSERT INTO `foodraised` (`id`, `food_type`, `food_name`, `food_weight`, `raiser_id`, `org-type`) VALUES
-(4, 'veg', 'abc', 18, 6, 'single'),
-(7, 'veg', 'aa', 1, 2, 'hotel'),
-(8, 'non_veg', 'biryani', 12, 5, 'NGO');
-
 -- --------------------------------------------------------
 
 --
@@ -85,6 +73,18 @@ CREATE TABLE `foodreciever` (
   `food_type` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `foodreciever`
+--
+
+INSERT INTO `foodreciever` (`id`, `raiser_id`, `reciever_id`, `food_weight`, `food_type`) VALUES
+(1, 2, 5, 50, 'veg'),
+(2, 5, 2, 50, 'veg'),
+(5, 8, 8, 12, 'non_veg'),
+(6, 12, 3, 20, 'non_veg'),
+(7, 13, 29, 30, 'veg'),
+(8, 14, 34, 50, 'non_veg');
+
 -- --------------------------------------------------------
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `hotel` (
   `hotel_address` varchar(50) NOT NULL,
   `hotel_email` varchar(50) NOT NULL,
   `hotel_password` varchar(10) NOT NULL,
-  `hotel_number` int(10) NOT NULL,
+  `hotel_number` bigint(50) NOT NULL,
   `hotel_photo` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -107,9 +107,7 @@ CREATE TABLE `hotel` (
 --
 
 INSERT INTO `hotel` (`id`, `hotel_name`, `hotel_license`, `hotel_address`, `hotel_email`, `hotel_password`, `hotel_number`, `hotel_photo`) VALUES
-(1, 'abc', '1313ss', 'sfa', 'sfsdfsad', 'sdfsf', 6464, ''),
-(3, 'aa', 'aa', 'SHASTRI NAGAR', 'khan44169@gmail.com', 'aa', 2147483647, ''),
-(2, 'abcd', 'aa16356', 'SHASTRI NAGAR', 'khan44169@gmail.com', '1646wda', 2147483647, '');
+(34, 'xyz', '123456789', 'SHASTRI NAGAR', 'xyz@gmail.com', '123456', 2147483647, '');
 
 -- --------------------------------------------------------
 
@@ -124,8 +122,8 @@ CREATE TABLE `ngo` (
   `ngo_address` varchar(50) NOT NULL,
   `ngo_email` varchar(20) NOT NULL,
   `ngo_password` varchar(10) NOT NULL,
-  `ngo_number` int(10) NOT NULL,
-  `ngo_photo` mediumblob NOT NULL
+  `ngo_number` bigint(50) NOT NULL,
+  `ngo_photo` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -133,10 +131,8 @@ CREATE TABLE `ngo` (
 --
 
 INSERT INTO `ngo` (`id`, `ngo_name`, `ngo_registeration`, `ngo_address`, `ngo_email`, `ngo_password`, `ngo_number`, `ngo_photo`) VALUES
-(2, 'abcd', 0, 'SHASTRI NAGAR', 'khan44169@gmail.com', 'abc', 2147483647, ''),
-(5, 'aa', 55, 'SHASTRI NAGAR', 'khan44169', 'aa', 96, ''),
-(1, 'sdfsd', 6546665, '4984sdjbfkjsjdhbbjhbdb', 'sdkbskdfjka', '69698', 98646, ''),
-(3, 'abc', 65464646, 'SHASTRI NAGAR', 'khan44169@gmail.com', '6464', 2147483647, '');
+(36, 'cdf NGO', 49841651, 'SHASTRI NAGAR', 'cdf@gmail.com', '123456', 9619122995, ''),
+(33, 'abc NGO', 987654321, 'SHASTRI NAGAR', 'khan44169@gmail.com', '123456', 2147483647, '');
 
 -- --------------------------------------------------------
 
@@ -151,7 +147,7 @@ CREATE TABLE `singleowner` (
   `address` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(10) NOT NULL,
-  `number` int(10) NOT NULL,
+  `number` bigint(50) NOT NULL,
   `photo` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -160,8 +156,7 @@ CREATE TABLE `singleowner` (
 --
 
 INSERT INTO `singleowner` (`id`, `name`, `adhar`, `address`, `email`, `password`, `number`, `photo`) VALUES
-(7, 'aa', 0, 'aaa', 'khan44', 'aa', 96, ''),
-(6, 'aaa', 0, 'SHASTRI NAGAR', 'khan44169@gmail.', 'aa', 9619, '');
+(35, 'hij', 0, 'SHASTRI NAGAR', 'hij@gmail.com', '123456', 96191, '');
 
 --
 -- Indexes for dumped tables
@@ -184,9 +179,7 @@ ALTER TABLE `foodraised`
 -- Indexes for table `foodreciever`
 --
 ALTER TABLE `foodreciever`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `for_record_who_give_raise_food` (`raiser_id`),
-  ADD KEY `for_record_who_recive_food` (`reciever_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `hotel`
@@ -204,8 +197,7 @@ ALTER TABLE `ngo`
 -- Indexes for table `singleowner`
 --
 ALTER TABLE `singleowner`
-  ADD UNIQUE KEY `number` (`number`),
-  ADD KEY `single_owner_id` (`id`);
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -215,30 +207,19 @@ ALTER TABLE `singleowner`
 -- AUTO_INCREMENT for table `auth_email`
 --
 ALTER TABLE `auth_email`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `foodraised`
 --
 ALTER TABLE `foodraised`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `foodreciever`
 --
 ALTER TABLE `foodreciever`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `foodreciever`
---
-ALTER TABLE `foodreciever`
-  ADD CONSTRAINT `for_record_who_give_raise_food` FOREIGN KEY (`raiser_id`) REFERENCES `auth_email` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `for_record_who_recive_food` FOREIGN KEY (`reciever_id`) REFERENCES `auth_email` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
